@@ -27,7 +27,7 @@ class apb_driver extends uvm_driver #(apb_transaction);
 // Build phase: get the virtual interface from the config DB
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if(!uvm_config_db#(virtual apb_if)::get(this,"","vif", vif)) 
+        if(!uvm_config_db#(virtual apb_if.driver)::get(this,"","vif", vif)) 
             `uvm_fatal("DRV", " Couldn't get APB interface from config DB")
         endfunction
 //Run phase
@@ -82,7 +82,7 @@ class apb_driver extends uvm_driver #(apb_transaction);
 
         // Logic cho lenh READ
         if (!tr.pwrite) tr.prdata = vif.drv_cb.prdata;
-        tr.slverr = vif.drv_cb.pslverr; 
+        tr.pslverr = vif.drv_cb.pslverr; 
 
         // End transaction 
         vif.drv_cb.psel <=0;
