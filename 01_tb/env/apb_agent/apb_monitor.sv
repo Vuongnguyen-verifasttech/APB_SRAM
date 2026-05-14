@@ -33,7 +33,7 @@ class apb_monitor extends uvm_monitor;
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         mon_ap = new("mon_ap", this);
-        if(!uvm_config_db#(virtual apb_if)::get(this,"","vif",vif))
+        if(!uvm_config_db#(virtual apb_if.monitor)::get(this,"","vif",vif))
             `uvm_fatal("MON","Couldn't get APB interface from config DB")
     endfunction
 
