@@ -1,4 +1,4 @@
-# filelist.f
+# filelist.f - APB UVM
 ../dut/apb_sram.sv
 ../interface/apb_if.sv
 ../env/apb_agent/apb_transaction.sv
