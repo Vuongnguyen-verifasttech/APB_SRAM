@@ -61,12 +61,12 @@ class apb_monitor extends uvm_monitor;
         trans = apb_transaction::type_id::create("trans");
 
         // Sample Setup Phase
-        trans.addr  = vif.mon_cb.paddr;
-        trans.write = vif.mon_cb.pwrite;
-        if (trans.write)
-            trans.data = vif.mon_cb.pwdata;
+        trans.paddr  = vif.mon_cb.paddr;
+        trans.pwrite = vif.mon_cb.pwrite;
+        if (trans.pwrite)
+            trans.pwdata = vif.mon_cb.pwdata;
 
-        `uvm_info(get_type_name(), $sformatf("Detected transaction: ADDR=0x%8h WRITE=%b", trans.addr, trans.write), UVM_HIGH)
+        `uvm_info(get_type_name(), $sformatf("Detected transaction: ADDR=0x%8h WRITE=%b", trans.paddr, trans.pwrite), UVM_HIGH)
 
         // Chờ transaction hoàn thành (PENABLE + PREADY)
         do begin
@@ -74,8 +74,8 @@ class apb_monitor extends uvm_monitor;
         end while (!(vif.mon_cb.penable == 1 && vif.mon_cb.pready == 1));
 
         // Sample kết quả
-        trans.rdata  = vif.mon_cb.prdata;
-        trans.slverr = vif.mon_cb.pslverr;
+        trans.prdata  = vif.mon_cb.prdata;
+        trans.pslverr = vif.mon_cb.pslverr;
 
         `uvm_info(get_type_name(), $sformatf("Collected: %s", trans.convert2string()), UVM_MEDIUM)
 
