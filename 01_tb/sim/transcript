@@ -1,0 +1,76 @@
+# vsim -c tb_top -do "run -all; quit -f" 
+# Start time: 21:10:29 on May 14,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.apb_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.apb_pkg(fast)
+# Loading work.apb_if_sv_unit(fast)
+# Loading work.tb_top(fast)
+# Loading work.apb_if(fast)
+# Loading work.apb_sram(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO ../tb/tb_top.sv(58) @ 0: reporter [TB_TOP] Virtual interfaces set successfully!
+# UVM_INFO @ 0: reporter [RNTST] Running test apb_base_test...
+# UVM_INFO ../test/apb_base_test.sv(33) @ 0: uvm_test_top [apb_base_test] Build phase completed
+# UVM_INFO ../env/apb_env.sv(36) @ 0: uvm_test_top.env [apb_env] Build phase completed
+# UVM_INFO ../env/apb_agent/apb_agent.sv(43) @ 0: uvm_test_top.env.agent [AGT] No is_active config, defaulting to UVM_ACTIVE
+# UVM_FATAL ../env/apb_agent/apb_driver.sv(31) @ 0: uvm_test_top.env.agent.driver [DRV]  Couldn't get APB interface from config DB
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [AGT]     1
+# [DRV]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TB_TOP]     1
+# [apb_base_test]     1
+# [apb_env]     1
+# ** Note: $finish    : /cadtools/mentor/Questa_10.6b/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ps  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# End time: 21:10:46 on May 14,2026, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 0
