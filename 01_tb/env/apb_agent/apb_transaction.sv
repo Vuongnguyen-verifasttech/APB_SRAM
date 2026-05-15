@@ -19,6 +19,8 @@ class apb_transaction extends uvm_sequence_item;
 
     // === THÊM FIELD NÀY ===
     string          seq_name = "UNKNOWN_SEQ";
+    // === THÊM DÒNG NÀY ===
+    int             trans_id = 0;     // Số thứ tự transaction
 
     // APB transaction fields
     rand bit [31:0] paddr;
@@ -51,15 +53,15 @@ class apb_transaction extends uvm_sequence_item;
 //=========Debugging support =========================
     virtual function string convert2string();
         string s;
-        s =$sformatf("ADDR= 0x%8h WRITE= %b DATA= 0x%8h WAIT= %0d SLVERR= %b RDATA= 0x%8h",
-                        paddr, pwrite, pwdata, wait_cycles, pslverr, prdata);
+        s = $sformatf("T#%0d | %s | ADDR=0x%8h WRITE=%b DATA=0x%8h RDATA=0x%8h SLVERR=%b",
+                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:prdata, prdata, pslverr);
         return s;
     endfunction
 
 //function to print okela when use uvm_info
     virtual function void do_print(uvm_printer printer);
         super.do_print(printer);
-        printer.print_string("SEQ_NAME", seq_name);
+        printer.print_string("SEQ_NAME", seq_name); 
         printer.print_field("ADDR", paddr, 32 , UVM_HEX);
         printer.print_field("WRITE", pwrite, 1, UVM_BIN);
         printer.print_field("DATA", pwrite?pwdata:prdata , 32, UVM_HEX);
