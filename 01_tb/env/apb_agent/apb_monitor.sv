@@ -39,14 +39,15 @@ class apb_monitor extends uvm_monitor;
 
     //-------------- RUN PHASE ------------------------
 
-    virtual task run_phase (uvm_phase phase);
-        forever begin 
-            if(!vif.presetn)
-            continue;
-            collect_transaction();
-        end
-    endtask 
+  virtual task run_phase(uvm_phase phase);
+    // Chờ reset xong
+    wait(vif.presetn == 1);
+    `uvm_info(get_type_name(), "Monitor started after reset", UVM_MEDIUM)
 
+    forever begin
+        collect_one_transaction();     // Đổi tên cho rõ
+    end
+endtask
     //--------------COLLECT TRANSACTION TASK -----------
    virtual task collect_transaction();
     apb_transaction trans;
