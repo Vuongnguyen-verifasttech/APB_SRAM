@@ -42,8 +42,8 @@ class apb_base_test extends uvm_test;
 
         // Create Sequence 
 
-        write_seq = apb_write_seq::type_id::create("write_seq");
-        read_seq = apb_read_seq::type_id::create("read_seq");
+//        write_seq = apb_write_seq::type_id::create("write_seq");
+//        read_seq = apb_read_seq::type_id::create("read_seq");
         wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq");
 
         // Run Sequence
