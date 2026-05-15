@@ -58,7 +58,7 @@ class apb_scoreboard extends uvm_scoreboard;
             // ============== READ ===========================
            logic [31:0] expected ; 
            read_transactions++;
-           expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] : 32'hDEADBEEF;
+           expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] : 32'h0;
 
             if (tr.prdata === expected) begin
                 passed_transactions++;
