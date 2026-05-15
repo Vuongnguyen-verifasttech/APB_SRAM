@@ -25,8 +25,8 @@ module tb_top;
 
     // DUT
     apb_sram #(
-        .MEM_DEPTH(8),   // 256 locations
-        .MAX_WAIT(10)
+        .MEM_DEPTH(10),   // 256 locations
+        .MAX_WAIT(8)
     ) dut (
         .pclk     (apb_if.pclk),
         .presetn  (apb_if.presetn),

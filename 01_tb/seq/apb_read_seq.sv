@@ -34,7 +34,7 @@ class apb_read_seq extends apb_base_seq;
             assert(tr.randomize() with {write == 0;});
             finish_item(tr);
 
-            `uvm_info(get_type_name(), $sformatf("Sent Read: ADDR=0x%8h", tr.addr), UVM_MEDIUM)
+            `uvm_info(get_type_name(), $sformatf("TASK READ DATA : Sent Read: ADDR=0x%8h", tr.addr), UVM_MEDIUM)
         end
     endtask
 
