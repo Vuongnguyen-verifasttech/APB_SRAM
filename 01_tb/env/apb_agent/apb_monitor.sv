@@ -45,7 +45,7 @@ class apb_monitor extends uvm_monitor;
     `uvm_info(get_type_name(), "Monitor started after reset", UVM_MEDIUM)
 
     forever begin
-        collect_one_transaction();     // Đổi tên cho rõ
+        collect_transaction();     // Đổi tên cho rõ
     end
 endtask
     //--------------COLLECT TRANSACTION TASK -----------
