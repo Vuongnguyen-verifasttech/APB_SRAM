@@ -42,6 +42,7 @@ class apb_scoreboard extends uvm_scoreboard;
 
     virtual function void write(apb_transaction tr); 
         total_transactions++;
+        tr.trans_id = total_transactions;   // Gán số thứ tự
         string seq_info = (tr.seq_name != "UNKNOWN_SEQ") ? $sformatf("[%s]", tr.seq_name) : "";
 
         if(tr.pslverr) begin
