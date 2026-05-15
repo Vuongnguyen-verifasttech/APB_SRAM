@@ -16,6 +16,7 @@ package apb_pkg;
     `include "apb_base_seq.sv"
     `include "apb_write_seq.sv"
     `include "apb_read_seq.sv"
+    `include "apb_wr_rd_seq.sv"
     `include "apb_base_test.sv"
 
 endpackage : apb_pkg
