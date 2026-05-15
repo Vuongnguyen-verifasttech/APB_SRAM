@@ -15,7 +15,7 @@
 `define APB_WRITE_SEQ_SV
 
 class apb_write_seq extends apb_base_seq;
-    `uvm_object_write(apb_write_seq)
+    `uvm_object_utils(apb_write_seq)
 
     rand int num_tx = 20;
 
@@ -26,7 +26,7 @@ class apb_write_seq extends apb_base_seq;
     virtual task body();
         apb_transaction tr;
         repeat(num_tx) begin 
-                tr = apb_transaction::type_id::create("tr";)
+                tr = apb_transaction::type_id::create("tr");
                 start_item(tr);
                 assert(tr.randomize() with {pwrite == 1;});
                 finish_item(tr);

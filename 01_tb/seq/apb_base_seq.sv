@@ -18,7 +18,7 @@ class apb_base_seq extends uvm_sequence #(apb_transaction);
     `uvm_object_utils(apb_base_seq)
 
     function new(string name = "apb_base_seq"); 
-        super.new(name, parent);
+        super.new(name); //object ne chi co name thoi
     endfunction
 
     // Main task to call child classes
@@ -27,6 +27,6 @@ class apb_base_seq extends uvm_sequence #(apb_transaction);
         `uvm_info(get_type_name(), "Base sequence body started", UVM_MEDIUM)
     endtask
 
-endclass : apn_base_seq
+endclass : apb_base_seq
 
 `endif

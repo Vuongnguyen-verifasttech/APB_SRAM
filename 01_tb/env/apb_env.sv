@@ -21,7 +21,7 @@ class apb_env extends uvm_env;
     apb_scoreboard scoreboard;
 
     function new(string name ="apb_env", uvm_component parent = null);
-        super.new(parent, name);
+        super.new(name, parent);// sai thu tu giua parent va name
     endfunction 
 
     //=========== BUILD PHASE =========================
@@ -44,12 +44,12 @@ class apb_env extends uvm_env;
     
         // Connect SB & Monitor 
         agent.mon_ap.connect(scoreboard.mon_imp);
-        `uvm_info(get_type_name(),"Connect phase completed - Monitor connected to Scoreboard")
+        `uvm_info(get_type_name(),"Connect phase completed - Monitor connected to Scoreboard",UVM_LOW)// thieu UVM_LOW
     endfunction 
 
     //============= REPORT PHASE ========================
 
-    virtual function void report_phase(uvm_phase phase)
+    virtual function void report_phase(uvm_phase phase); // thieu ;
         super.report_phase(phase);
         `uvm_info(get_type_name(),"Enviroment report phase completed", UVM_LOW)
     endfunction 

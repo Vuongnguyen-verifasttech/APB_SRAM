@@ -23,17 +23,17 @@ class apb_base_test extends uvm_test;
     apb_write_seq write_seq;
     apb_read_seq read_seq; 
 
-    function new (string name "apb_base_test", uvm_component parent = null )
+    function new(string name = "apb_base_test", uvm_component parent = null); // thieu dau = & ;
         super.new(name, parent);
     endfunction
     
-    virtual function build_phase(uvm_phase phase)
+     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         env=apb_env::type_id::create("env",this);
         `uvm_info(get_type_name(), "Build phase completed", UVM_MEDIUM)
     endfunction 
     
-    virtual task run_phase(uvm_phase phase)
+    virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         
         phase.raise_objection(this);
@@ -46,8 +46,8 @@ class apb_base_test extends uvm_test;
 
         // Run Sequence
         repeat(2) begin 
-            write.seq.start(env.agent.sequencer);
-            read.seq.start(env.agent.sequencer);
+            write_seq.start(env.agent.sequencer);
+            read_seq.start(env.agent.sequencer);
         end
         `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE)
 
