@@ -22,7 +22,7 @@ class apb_base_test extends uvm_test;
     apb_env env;
     apb_write_seq write_seq;
     apb_read_seq read_seq; 
-    apb_wr_rd_seq wr_rd_sq;
+    apb_wr_rd_seq wr_rd_seq;
 
     function new(string name = "apb_base_test", uvm_component parent = null); // thieu dau = & ;
         super.new(name, parent);
