@@ -41,8 +41,10 @@ class apb_scoreboard extends uvm_scoreboard;
     // Ham Write automatic goi khi 1 Tran duoc gui den 
 
     virtual function void write(apb_transaction tr); 
+        string seq_info;
         total_transactions++;
-        string seq_info = (tr.seq_name != "UNKNOWN_SEQ") ? $sformatf("[%s]", tr.seq_name) : "";
+        tr.trans.id = total_transactions;
+        seq_info = (tr.seq_name != "UNKNOWN_SEQ") ? $sformatf("[%s]", tr.seq_name) : "";
 
         if(tr.pslverr) begin
             error_transactions++; 
