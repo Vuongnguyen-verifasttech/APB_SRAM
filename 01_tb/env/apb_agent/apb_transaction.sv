@@ -17,6 +17,9 @@
 class apb_transaction extends uvm_sequence_item;
     `uvm_object_utils(apb_transaction)
 
+    // === THÊM FIELD NÀY ===
+    string          seq_name = "UNKNOWN_SEQ";
+
     // APB transaction fields
     rand bit [31:0] paddr;
     rand bit [31:0] pwdata;
@@ -56,6 +59,7 @@ class apb_transaction extends uvm_sequence_item;
 //function to print okela when use uvm_info
     virtual function void do_print(uvm_printer printer);
         super.do_print(printer);
+        printer.print_string("SEQ_NAME", seq_name);
         printer.print_field("ADDR", paddr, 32 , UVM_HEX);
         printer.print_field("WRITE", pwrite, 1, UVM_BIN);
         printer.print_field("DATA", pwrite?pwdata:prdata , 32, UVM_HEX);

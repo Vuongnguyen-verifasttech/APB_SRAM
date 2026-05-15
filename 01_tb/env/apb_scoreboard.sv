@@ -42,10 +42,11 @@ class apb_scoreboard extends uvm_scoreboard;
 
     virtual function void write(apb_transaction tr); 
         total_transactions++;
+        string seq_info = (tr.seq_name != "UNKNOWN_SEQ") ? $sformatf("[%s]", tr.seq_name) : "";
 
         if(tr.pslverr) begin
             error_transactions++; 
-            `uvm_info(get_type_name(),$sformatf("SLVERR detect at ADDR = 0x%8h, DATA = 0x%8h",tr.paddr,tr.pwdata),UVM_HIGH);
+            `uvm_warning(get_type_name(), $sformatf("%s SLVERR at ADDR=0x%8h", seq_info, tr.addr))
             return;
         end
         if (tr.pwrite) begin 
@@ -53,7 +54,8 @@ class apb_scoreboard extends uvm_scoreboard;
             write_transactions++;
             mem_model[tr.paddr] = tr.pwdata;
             passed_transactions++;
-            `uvm_info(get_type_name(), $sformatf(" WRITE OKLA : ADDR = 0x%8h, DATA = 0x%8h", tr.paddr, tr.pwdata), UVM_HIGH);
+            `uvm_info(get_type_name(), $sformatf("%s WRITE OK: ADDR=0x%8h DATA=0x%8h", 
+                  seq_info, tr.addr, tr.data), UVM_HIGH);
         end else begin 
             // ============== READ ===========================
            logic [31:0] expected ; 
@@ -62,11 +64,12 @@ class apb_scoreboard extends uvm_scoreboard;
 
             if (tr.prdata === expected) begin
                 passed_transactions++;
-                `uvm_info(get_type_name(), $sformatf("Read PASS: ADDR=0x%8h, RDATA=0x%8h", tr.paddr, tr.prdata), UVM_MEDIUM)
+                `uvm_info(get_type_name(), $sformatf("%s READ PASS: ADDR=0x%8h RDATA=0x%8h", 
+                      seq_info, tr.addr, tr.rdata), UVM_MEDIUM);
             end else begin
                 failed_transactions++;
-                `uvm_error(get_type_name(), $sformatf("Read FAIL! ADDR=0x%8h | Exp=0x%8h | Act=0x%8h", 
-                          tr.paddr, expected, tr.prdata))
+                `uvm_error(get_type_name(), $sformatf("%s READ FAIL: ADDR=0x%8h Exp=0x%8h Act=0x%8h", 
+                      seq_info, tr.addr, expected, tr.rdata));
             end
         end
     endfunction

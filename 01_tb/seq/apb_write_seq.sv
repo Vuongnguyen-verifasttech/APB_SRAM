@@ -29,6 +29,7 @@ class apb_write_seq extends apb_base_seq;
                 tr = apb_transaction::type_id::create("tr");
                 start_item(tr);
                 assert(tr.randomize() with {pwrite == 1;});
+                tr.seq_name = "WRITE_SEQ";
                 finish_item(tr);
         `uvm_info(get_type_name(), $sformatf("TASK WRITE: Sent Write: ADDR = 0x%8h, DATA = 0x%8h", tr.paddr, tr.pwdata), UVM_MEDIUM)
         end

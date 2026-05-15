@@ -32,6 +32,7 @@ class apb_read_seq extends apb_base_seq;
 
             start_item(tr);
             assert(tr.randomize() with {pwrite == 0;});
+            tr.seq_name = "READ_SEQ";
             finish_item(tr);
 
             `uvm_info(get_type_name(), $sformatf("TASK READ DATA : Sent Read: ADDR=0x%8h", tr.paddr), UVM_MEDIUM)

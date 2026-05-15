@@ -33,6 +33,8 @@ class apb_wr_rd_seq extends apb_base_seq;
             
             start_item(wr_trans);
             assert(wr_trans.randomize() with {pwrite == 1;});
+            // Trong phần WRITE
+            wr_trans.seq_name = "WR_RD_SEQ_WRITE";
             finish_item(wr_trans);
 
             `uvm_info(get_type_name(), $sformatf("WRITE: ADDR=0x%8h DATA=0x%8h", 
@@ -46,6 +48,8 @@ class apb_wr_rd_seq extends apb_base_seq;
                 pwrite == 0;
                 paddr == wr_trans.paddr;     // Đọc lại cùng địa chỉ
             });
+            // Trong phần READ
+            rd_trans.seq_name = "WR_RD_SEQ_READ";
             finish_item(rd_trans);
 
             `uvm_info(get_type_name(), $sformatf("READ : ADDR=0x%8h RDATA=0x%8h", 
