@@ -42,7 +42,7 @@ class apb_transaction extends uvm_sequence_item;
     }
     // DUT chỉ co mem_depth = 10 --> 1024 word --> address range là 0x0000_0000 đến 0x0000_0fff de kich hoat bao loi pslverr
     constraint addr_range {
-        paddr inside {[32'h0000_0000:32'h0000_03ff]}; // thieu ; 
+        paddr inside {[32'h0000_0000:32'h0000_04ff]}; // thieu ; 
     }
 
 // ======== Constructor ============================
