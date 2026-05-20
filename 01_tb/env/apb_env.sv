@@ -19,6 +19,7 @@ class apb_env extends uvm_env;
 
     apb_agent agent;
     apb_scoreboard scoreboard;
+    apb_coverage cov; 
 
     function new(string name ="apb_env", uvm_component parent = null);
         super.new(name, parent);// sai thu tu giua parent va name
@@ -32,7 +33,8 @@ class apb_env extends uvm_env;
         agent = apb_agent::type_id::create("agent", this);
         //Create Scoreboard
         scoreboard = apb_scoreboard::type_id::create("scoreboard", this);
-
+        // Create Coverage
+        cov = apb_coverage::type_id::create("Coverage", this);
     `uvm_info(get_type_name(),"Build phase completed", UVM_MEDIUM)
 
     endfunction 
@@ -44,6 +46,7 @@ class apb_env extends uvm_env;
     
         // Connect SB & Monitor 
         agent.mon_ap.connect(scoreboard.mon_imp);
+        agent.mon_ap.connect(cov.analysis_export);
         `uvm_info(get_type_name(),"Connect phase completed - Monitor connected to Scoreboard",UVM_LOW)// thieu UVM_LOW
     endfunction 
 
