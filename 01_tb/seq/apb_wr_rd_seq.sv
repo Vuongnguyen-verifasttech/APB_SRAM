@@ -18,7 +18,7 @@ class apb_wr_rd_seq extends apb_base_seq;
 
     `uvm_object_utils(apb_wr_rd_seq)
 
-    rand int num_tx = 256;     // Số lần Write-Read
+    rand int num_tx = 16;     // Số lần Write-Read
 
     function new(string name = "apb_wr_rd_seq");
         super.new(name);

@@ -46,7 +46,7 @@ module tb_top;
         uvm_config_db#(virtual apb_if.monitor)::set(null, "*", "vif", apb_if.monitor);
 
         `uvm_info("TB_TOP", "Starting APB UVM Testbench", UVM_LOW)
-
+        //$dumpvars(0,tb_top);
         run_test("apb_base_test");   // Chạy test mặc định
     end
 

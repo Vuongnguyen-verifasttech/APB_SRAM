@@ -46,9 +46,9 @@ class apb_base_test extends uvm_test;
         wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq");
 
         // Run Sequence
-        repeat(2) begin 
-          //  write_seq.start(env.agent.sequencer);
-          //  read_seq.start(env.agent.sequencer);
+        repeat(200) begin 
+            write_seq.start(env.agent.sequencer);
+            read_seq.start(env.agent.sequencer);
             wr_rd_seq.start(env.agent.sequencer);
         end
         `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE)

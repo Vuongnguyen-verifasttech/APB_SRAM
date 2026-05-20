@@ -21,6 +21,7 @@ compile:
 		+incdir+../seq \
 		+incdir+../test \
 		+incdir+../include \
+		+incdir+../coverage \
 		+UVM_TESTNAME=apb_base_test \
 		-f $(FILELIST) \
 		$(PKG_FILE) \

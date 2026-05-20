@@ -1,92 +1,66 @@
-//==============================================================================
-// File          : apb_coverage.sv
-// Author        : [vnguyen]
-// Company       : [Verifast]
-// Project       : APB Verification Environment
-// Description   : APB Coverage definition
-//                 - Define covergroups to measure functional coverage of APB transactions
-//                      
-//
-// Version       : 1.0
-// Date          : 13-May-2026
-//==============================================================================
-`ifdef APB_COVERAGE_SV
+`ifndef APB_COVERAGE_SV
 `define APB_COVERAGE_SV
 
-class apb_coverage extends uvm_subscriber #(apb_transaction); 
-    `uvm_componnent_utils(apb_coverage)
+class apb_coverage extends uvm_subscriber #(apb_transaction);
+    `uvm_component_utils(apb_coverage)
 
     apb_transaction tr;
 
-    //===================COVERGROUPS======================
-    covergroup cg_apb_coverage;
+    covergroup cg_apb;
         option.per_instance = 1;
-        option.goal = 95; // Đặt mục tiêu coverage 95%
-        
-        // 1. Transaction types
+        option.goal = 95;
+
+        // 1. Transaction Type
         cp_type: coverpoint tr.pwrite {
-            bins write = {1'b1};
-            bin read = {1'b0};
-
+            bins write = {1};
+            bins read  = {0};
         }
 
-        // 2. Address Ranges
-        cp_addr: coverpoint tr.paddr {
-            bins valid = {[0:1023]}; // giá trị địa chỉ hợp lệ
-           // bins illegal = {[1024:32'hFFFF_FFFF]}; // Giá trị địa chỉ không hợp lệ bên ngoài phạm vi bộ nhớ
+        // 2. Address
+        cp_addr: coverpoint tr.paddr[9:0] {
+            bins valid[] = {[0:1023]};
         }
 
-        // 3. wait state
-        cg_wait_states: coverpoint tr.wait_cycles {
-            bins zero = {0};
-            bins low = {[1:3]};
-            bins medium = {[4:7]};
-            bin high = {[7:8]};
+        // 3. Wait States
+        cp_wait: coverpoint tr.wait_cycles {
+            bins zero_b   = {0};
+            bins low_b    = {[1:3]};
+            bins medium_b = {[4:6]};
+            bins high_b   = {[7:8]}; // kh dc dat ten giong bien co dinh
         }
 
-        // 4. Error response
+        // 4. Error
         cp_error: coverpoint tr.pslverr {
-            bins no_error = {1'b0};
-            bins error = {1'b1};
+            bins no_error = {0};
+            bins has_error = {1};
         }
 
-        // Cross Coverage 
-        cross_type_addr: cross cp_type, cp_addr;
+        // Cross Coverage
         cross_type_wait: cross cp_type, cp_wait;
-        cross_error_addr: cross cp_error, cp_addr;
-        
-    endgroup: cg_apb_coverage 
+        cross_type_addr : cross cp_type, cp_addr;
+        cross_error     : cross cp_type, cp_error;
 
-    // Constructor
-    function new(string name ="apb_coverage", uvm_component parent = "null")
-    
-    super.new(name, parent);
-    cg_apb_coverage = new();
-    
+    endgroup : cg_apb
+
+    function new(string name = "apb_coverage", uvm_component parent = null);
+        super.new(name, parent);
+        cg_apb = new();
     endfunction
 
-    // Receive transaction từ monitor
     virtual function void write(apb_transaction t);
-    tr = t;
-    if (tr != null) begin
-        cg_apb_coverage.sample();
-    end
-    endfunction 
+        tr = t;
+        if (tr != null) begin
+            cg_apb.sample();
+        end
+    endfunction
 
-// Report cuối test
     virtual function void report_phase(uvm_phase phase);
         super.report_phase(phase);
         `uvm_info(get_type_name(), 
-            $sformatf("\n=== FUNCTIONAL COVERAGE REPORT ===\nCoverage = %.2f%%", 
-                      cg_apb_coverage.get_inst_coverage()), UVM_NONE);
+            $sformatf("=== FUNCTIONAL COVERAGE = %.2f%% ===", 
+                      cg_apb.get_inst_coverage()), UVM_NONE);
     endfunction
 
 endclass : apb_coverage
 
 `endif
-
-
-
-
-
-
