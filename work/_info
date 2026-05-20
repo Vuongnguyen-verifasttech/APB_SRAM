@@ -9,85 +9,86 @@ z2
 cModel Technology
 Z0 d/home/vnguyen/Documents/APB_SRAM/01_tb/sim
 T_opt
-!s110 1778820839
-Vfa3J7:f9@@@CZUYZb4L0K2
+!s110 1778831955
+V7>fh85<YhHDUSJQHJ8UTH1
 04 6 4 work tb_top fast 0
-=1-9cdc715ee8c2-6a06a6e6-b8c56-11e9e
+=1-9cdc715ee8c2-6a06d252-786b7-14295
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
 n@_opt
 OL;O;10.6b;65
+R0
 Yapb_if
 Z2 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z3 !s110 1778820822
+!s110 1779248223
 !i10b 1
 !s100 4Sm4`GQ7zG6bbDl;@>2dP0
 IdLi8TXcUh2iaCCRSBNI5W2
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 !s105 apb_if_sv_unit
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 apb_if_sv_unit
 S1
 R0
-Z6 w1778733944
-Z7 8../interface/apb_if.sv
-Z8 F../interface/apb_if.sv
+Z5 w1778733944
+Z6 8../interface/apb_if.sv
+Z7 F../interface/apb_if.sv
 L0 15
-Z9 OL;L;10.6b;65
+Z8 OL;L;10.6b;65
 r1
 !s85 0
 31
-Z10 !s108 1778820822.000000
-Z11 !s107 ../test/apb_base_test.sv|../seq/apb_wr_rd_seq.sv|../seq/apb_read_seq.sv|../seq/apb_write_seq.sv|../seq/apb_base_seq.sv|../env/apb_env.sv|../env/apb_scoreboard.sv|../env/apb_agent/apb_agent.sv|../env/apb_agent/apb_monitor.sv|../env/apb_agent/apb_driver.sv|../env/apb_agent/apb_transaction.sv|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/tb_top.sv|../include/apb_pkg.sv|../interface/apb_if.sv|
-Z12 !s90 -work|work|-sv|-mfcu|-timescale|1ns/1ps|+acc|+incdir+../interface|+incdir+../env/apb_agent|+incdir+../seq|+incdir+../test|+incdir+../include|+UVM_TESTNAME=apb_base_test|-f|filelist.f|../include/apb_pkg.sv|../tb/tb_top.sv|
+Z9 !s108 1779248223.000000
+Z10 !s107 ../test/apb_base_test.sv|../seq/apb_wr_rd_seq.sv|../seq/apb_read_seq.sv|../seq/apb_write_seq.sv|../seq/apb_base_seq.sv|../env/apb_env.sv|../env/apb_scoreboard.sv|../env/apb_agent/apb_agent.sv|../env/apb_agent/apb_monitor.sv|../env/apb_agent/apb_driver.sv|../env/apb_agent/apb_transaction.sv|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/tb_top.sv|../include/apb_pkg.sv|../interface/apb_if.sv|
+Z11 !s90 -work|work|-sv|-mfcu|-timescale|1ns/1ps|+acc|+incdir+../interface|+incdir+../env/apb_agent|+incdir+../seq|+incdir+../test|+incdir+../include|+UVM_TESTNAME=apb_base_test|-f|filelist.f|../include/apb_pkg.sv|../tb/tb_top.sv|
 !i113 0
-Z13 o-work work -sv -mfcu -timescale 1ns/1ps +acc +UVM_TESTNAME=apb_base_test -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z14 !s92 -work work -sv -mfcu -timescale 1ns/1ps +acc +incdir+../interface +incdir+../env/apb_agent +incdir+../seq +incdir+../test +incdir+../include +UVM_TESTNAME=apb_base_test +incdir+../interface +incdir+../include +incdir+../env/apb_agent +incdir+../env +incdir+../seq +incdir+../test -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 o-work work -sv -mfcu -timescale 1ns/1ps +acc +UVM_TESTNAME=apb_base_test -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -work work -sv -mfcu -timescale 1ns/1ps +acc +incdir+../interface +incdir+../env/apb_agent +incdir+../seq +incdir+../test +incdir+../include +UVM_TESTNAME=apb_base_test +incdir+../interface +incdir+../include +incdir+../env/apb_agent +incdir+../env +incdir+../seq +incdir+../test -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
 Xapb_if_sv_unit
 R2
-Z15 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
-Z16 DXx4 work 7 apb_pkg 0 22 X5D17o5N<T7OL@G=7n;Nh2
-VTabcDbO1630JNU8dl7Q<]2
+Z14 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+Z15 DXx4 work 7 apb_pkg 0 22 ?Rc_S6`:aYVm`jj2an=O;2
+VBZcLF9>fb<YD_:NRa<TH;3
 r1
 !s85 0
 31
 !i10b 1
 !s100 jGild?imjoAzdPgVn[K]>3
-ITabcDbO1630JNU8dl7Q<]2
+IBZcLF9>fb<YD_:NRa<TH;3
 !i103 1
 S1
 R0
 w1778817829
+R6
 R7
-R8
-Z17 8../include/apb_pkg.sv
-Z18 F../include/apb_pkg.sv
-Z19 8../tb/tb_top.sv
-Z20 F../tb/tb_top.sv
-Z21 F/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z16 8../include/apb_pkg.sv
+Z17 F../include/apb_pkg.sv
+Z18 8../tb/tb_top.sv
+Z19 F../tb/tb_top.sv
+Z20 F/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
 L0 3
+R8
 R9
 R10
 R11
-R12
 !i113 0
+R12
 R13
-R14
 R1
 Xapb_pkg
 !s115 apb_if
 R2
-R15
-R3
+R14
+!s110 1779248224
 !i10b 1
-!s100 jHC]@eBWKQ0T<X6<AFU]90
-IX5D17o5N<T7OL@G=7n;Nh2
-VX5D17o5N<T7OL@G=7n;Nh2
+!s100 CCkJkb>f[WWS6J[^CjCdT1
+I?Rc_S6`:aYVm`jj2an=O;2
+V?Rc_S6`:aYVm`jj2an=O;2
 S1
 R0
-w1778820819
+w1778831926
+R16
 R17
-R18
-R21
+R20
 F/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
 F/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
 F/cadtools/mentor/Questa_10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
@@ -111,16 +112,16 @@ F../seq/apb_read_seq.sv
 F../seq/apb_wr_rd_seq.sv
 F../test/apb_base_test.sv
 L0 4
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
+R12
 R13
-R14
 R1
 vapb_sram
 R2
@@ -128,49 +129,49 @@ R2
 !i10b 1
 !s100 >K=GMaQWLQjSVJzY7cCYb3
 IGAg31^DHiTnFa5:6ADoeS3
-R4
+R3
 !s105 apb_sram_sv_unit
 S1
 R0
-R6
+R5
 8../dut/apb_sram.sv
 F../dut/apb_sram.sv
 L0 3
-R9
+R8
 r1
 !s85 0
 31
 !s108 1778750125.000000
 !s107 ../tb/tb_top.sv|../include/apb_pkg.sv|../test/apb_base_test.sv|../seq/apb_read_seq.sv|../seq/apb_write_seq.sv|../seq/apb_base_seq.sv|../env/apb_env.sv|../env/apb_scoreboard.sv|../env/apb_agent/apb_agent.sv|../env/apb_agent/apb_monitor.sv|../env/apb_agent/apb_driver.sv|../env/apb_agent/apb_transaction.sv|../interface/apb_if.sv|../dut/apb_sram.sv|
-R12
+R11
 !i113 0
-R13
+R12
 !s92 -work work -sv -mfcu -timescale 1ns/1ps +acc +incdir+../interface +incdir+../env/apb_agent +incdir+../seq +incdir+../test +incdir+../include +UVM_TESTNAME=apb_base_test -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
 vtb_top
 R2
+R14
 R15
-R16
-DXx4 work 14 apb_if_sv_unit 0 22 TabcDbO1630JNU8dl7Q<]2
-R4
+DXx4 work 14 apb_if_sv_unit 0 22 BZcLF9>fb<YD_:NRa<TH;3
+R3
 r1
 !s85 0
 31
 !i10b 1
 !s100 n`dBj`UjBTjhfLL[jPKYR3
 I^JYiADE?Mem]oFB6eKd[a1
-R5
+R4
 S1
 R0
 w1778814004
+R18
 R19
-R20
 L0 6
+R8
 R9
 R10
 R11
-R12
 !i113 0
+R12
 R13
-R14
 R1
