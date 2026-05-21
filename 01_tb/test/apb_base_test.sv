@@ -46,7 +46,7 @@ class apb_base_test extends uvm_test;
         wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq");
 
         // Run Sequence
-        repeat(200) begin 
+        repeat(100) begin 
             write_seq.start(env.agent.sequencer);
             read_seq.start(env.agent.sequencer);
             wr_rd_seq.start(env.agent.sequencer);

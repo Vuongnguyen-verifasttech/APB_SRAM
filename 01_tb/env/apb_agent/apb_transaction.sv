@@ -45,15 +45,15 @@ class apb_transaction extends uvm_sequence_item;
     constraint wait_range {
       wait_cycles inside {[0:8]};
       soft wait_cycles dist {
-        0:=20,
-        [1:3] := 30,
+        // 0 := 20,
+        [0:3] := 50,
         [4:6] :=30,
         [7:8] := 20
       };
   }
     // DUT chỉ co mem_depth = 10 --> 1024 word --> address range là 0x0000_0000 đến 0x0000_0fff de kich hoat bao loi pslverr
     constraint addr_range {
-        paddr inside {[32'h0000_0000:32'h0000_03ff]}; // thieu ; 
+        paddr inside {[32'h0000_0000:32'h0000_04ff]}; // thieu ; 
     }
 
 // ======== Constructor ============================
