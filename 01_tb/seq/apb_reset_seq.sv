@@ -18,15 +18,24 @@ class apb_reset_seq extends apb_base_seq;
 
     `uvm_object_utils(apb_reset_seq)
 
-    rand int reset_duration;   // Số chu kỳ giữ reset active-low
+    rand int reset_duration;
 
-    // Constraint
+    // Virtual interface
+    virtual apb_if vif;
+
     constraint reset_c {
-        reset_duration inside {[5:20]};   // Giữ reset từ 5 đến 20 cycles
+        reset_duration inside {[5:20]};
     }
 
     function new(string name = "apb_reset_seq");
         super.new(name);
+    endfunction
+
+    // Lấy virtual interface từ config_db
+    virtual function void pre_body();
+        if(!uvm_config_db#(virtual apb_if)::get(null, "", "vif", vif)) begin
+            `uvm_fatal(get_type_name(), "Failed to get virtual interface from config_db!");
+        end
     endfunction
 
     virtual task body();
@@ -40,29 +49,28 @@ class apb_reset_seq extends apb_base_seq;
         `uvm_info(get_type_name(), $sformatf("Asserting presetn = 0 for %0d cycles", reset_duration), UVM_MEDIUM);
 
         repeat(reset_duration) begin
-            @(p_sequencer.vif.driver_cb);
-            p_sequencer.vif.driver_cb.presetn <= 1'b0;   // Assert reset
+            @(vif.driver_cb);
+            vif.driver_cb.presetn <= 1'b0;
         end
 
         //===============================================
         // 2. Deassert Reset (presetn = 1)
         //===============================================
-        @(p_sequencer.vif.driver_cb);
-        p_sequencer.vif.driver_cb.presetn <= 1'b1;   // Deassert reset
+        @(vif.driver_cb);
+        vif.driver_cb.presetn <= 1'b1;
 
         `uvm_info(get_type_name(), "Deasserted reset. Waiting for DUT to stabilize...", UVM_MEDIUM);
 
-        repeat(15) @(p_sequencer.vif.driver_cb);   // Chờ DUT ổn định sau reset
+        repeat(15) @(vif.driver_cb);
 
         //===============================================
-        // 3. Gửi vài transaction sau reset để kiểm tra
+        // 3. Gửi vài transaction sau reset
         //===============================================
         `uvm_info(get_type_name(), "Sending 2 write + 2 read transactions after reset...", UVM_MEDIUM);
 
-        // --- 2 Write transactions ---
+        // --- 2 Write ---
         repeat(2) begin
             tr = apb_transaction::type_id::create("tr");
-
             start_item(tr);
             assert(tr.randomize() with { pwrite == 1; })
             else `uvm_error(get_type_name(), "Randomize failed for WRITE transaction!");
@@ -70,10 +78,9 @@ class apb_reset_seq extends apb_base_seq;
             finish_item(tr);
         end
 
-        // --- 2 Read transactions ---
+        // --- 2 Read ---
         repeat(2) begin
             tr = apb_transaction::type_id::create("tr");
-
             start_item(tr);
             assert(tr.randomize() with { pwrite == 0; })
             else `uvm_error(get_type_name(), "Randomize failed for READ transaction!");
