@@ -1,6 +1,6 @@
 //==============================================================================
 // File          : apb_b2b_seq.sv
-// Description   : True Back-to-Back Sequence (không idle giữa transaction)
+// Description   : True Back-to-Back Sequence - Transaction liên tiếp không idle
 // Testplan ID   : APB_10
 //==============================================================================
 
@@ -17,21 +17,37 @@ class apb_b2b_seq extends apb_base_seq;
         num_tx inside {[30:80]};
     }
 
+    // Handle to driver
+    apb_driver drv;
+
     function new(string name = "apb_b2b_seq");
         super.new(name);
     endfunction
+
+    virtual task pre_body();
+        // Lấy driver từ config_db (path phổ biến)
+        if (!uvm_config_db#(apb_driver)::get(null, "uvm_test_top.env.agent", "driver", drv)) begin
+            if (!uvm_config_db#(apb_driver)::get(null, "*", "driver", drv)) begin
+                `uvm_fatal(get_type_name(), "Cannot get driver from config_db! B2B mode will not work.");
+            end
+        end
+    endtask
 
     virtual task body();
         apb_transaction tr;
 
         `uvm_info(get_type_name(), "============================================================", UVM_NONE);
-        `uvm_info(get_type_name(), $sformatf("           START APB_10: TRUE BACK-TO-BACK SEQUENCE - %0d TRANSACTIONS", num_tx), UVM_NONE);
+        `uvm_info(get_type_name(), $sformatf("           START TRUE BACK-TO-BACK SEQUENCE - %0d TRANSACTIONS", num_tx), UVM_NONE);
         `uvm_info(get_type_name(), "           (No idle cycle between transactions)", UVM_NONE);
         `uvm_info(get_type_name(), "============================================================", UVM_NONE);
 
-        // Bật B2B mode trong driver
-        if (p_sequencer != null && p_sequencer.driver != null)
-            p_sequencer.driver.b2b_mode = 1;
+        // Bật B2B mode
+        if (drv != null) begin
+            drv.b2b_mode = 1;
+            `uvm_info(get_type_name(), "→ B2B mode ENABLED in driver", UVM_MEDIUM);
+        end else begin
+            `uvm_warning(get_type_name(), "Driver is null, cannot enable B2B mode");
+        end
 
         repeat(num_tx) begin
             tr = apb_transaction::type_id::create("tr");
@@ -54,12 +70,14 @@ class apb_b2b_seq extends apb_base_seq;
             end
         end
 
-        // Tắt B2B mode sau khi chạy xong
-        if (p_sequencer != null && p_sequencer.driver != null)
-            p_sequencer.driver.b2b_mode = 0;
+        // Tắt B2B mode
+        if (drv != null) begin
+            drv.b2b_mode = 0;
+            `uvm_info(get_type_name(), "→ B2B mode DISABLED in driver", UVM_MEDIUM);
+        end
 
         `uvm_info(get_type_name(), "============================================================", UVM_NONE);
-        `uvm_info(get_type_name(), $sformatf("         COMPLETED APB_10:  BACK-TO-BACK SEQUENCE (%0d transactions)", num_tx), UVM_NONE);
+        `uvm_info(get_type_name(), $sformatf("           BACK-TO-BACK SEQUENCE COMPLETED (%0d transactions)", num_tx), UVM_NONE);
         `uvm_info(get_type_name(), "============================================================", UVM_NONE);
     endtask
 

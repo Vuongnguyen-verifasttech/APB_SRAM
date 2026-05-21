@@ -50,6 +50,10 @@ class apb_agent extends uvm_agent;
         if (is_active == UVM_ACTIVE) begin 
             driver    = apb_driver::type_id::create("driver", this);
             sequencer = uvm_sequencer#(apb_transaction)::type_id::create("sequencer", this);
+            // ==================== THÊM ĐOẠN NÀY ====================
+                    // Set driver vào config_db để sequence lấy được
+                            uvm_config_db#(apb_driver)::set(this, "*", "driver", driver);
+                                    `uvm_info(get_type_name(), "Set driver to config_db for B2B sequence", UVM_MEDIUM);
         end
     endfunction 
     
