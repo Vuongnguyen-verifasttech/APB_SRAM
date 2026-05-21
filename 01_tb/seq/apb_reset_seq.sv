@@ -49,19 +49,19 @@ class apb_reset_seq extends apb_base_seq;
         `uvm_info(get_type_name(), $sformatf("Asserting presetn = 0 for %0d cycles", reset_duration), UVM_MEDIUM);
 
         repeat(reset_duration) begin
-            @(vif.driver_cb);
-            vif.driver_cb.presetn <= 1'b0;
+            @(vif.drv_cb);
+            vif.drv_cb.presetn <= 1'b0;
         end
 
         //===============================================
         // 2. Deassert Reset (presetn = 1)
         //===============================================
-        @(vif.driver_cb);
-        vif.driver_cb.presetn <= 1'b1;
+        @(vif.drv_cb);
+        vif.drv_cb.presetn <= 1'b1;
 
         `uvm_info(get_type_name(), "Deasserted reset. Waiting for DUT to stabilize...", UVM_MEDIUM);
 
-        repeat(15) @(vif.driver_cb);
+        repeat(15) @(vif.drv_cb);
 
         //===============================================
         // 3. Gửi vài transaction sau reset
