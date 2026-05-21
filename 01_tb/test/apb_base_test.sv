@@ -13,6 +13,7 @@ class apb_base_test extends uvm_test;
     apb_wr_rd_seq   wr_rd_seq;
     apb_illegal_addr_seq illegal_addr_seq;
     apb_stress_seq stress_seq;
+    apb_b2b_seq b2b_seq;
 
     function new(string name = "apb_base_test", uvm_component parent = null);
         super.new(name, parent);
@@ -38,6 +39,7 @@ class apb_base_test extends uvm_test;
         wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq", this);
         illegal_addr_seq = apb_illegal_addr_seq::type_id::create("illegal_addr_seq", this);
         stress_seq = apb_stress_seq::type_id::create("stress_seq",this);
+        b2b_seq = apb_b2b_seq::type_id::create("b2b_seq", this);
 
 
         // Chạy Reset trước
@@ -53,6 +55,7 @@ class apb_base_test extends uvm_test;
         // Chạy sequence địa chỉ bất hợp lệ
         illegal_addr_seq.start(env.agent.sequencer);
         stress_seq.start(env.agent.sequencer);
+        b2b_seq.start(env.agent.sequencer);
         `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE)
 
         phase.drop_objection(this);

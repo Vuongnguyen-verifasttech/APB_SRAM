@@ -26,6 +26,7 @@ package apb_pkg;
     `include "apb_reset_seq.sv"
     `include "apb_illegal_addr_seq.sv"
     `include "apb_stress_seq.sv"
+    `include "apb_b2b_seq.sv"
 
     // 5. Test
     `include "apb_base_test.sv"
