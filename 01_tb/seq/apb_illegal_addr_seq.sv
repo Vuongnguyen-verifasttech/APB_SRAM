@@ -48,7 +48,7 @@ class apb_illegal_addr_seq extends apb_base_seq;
 
             // Log chi tiết mỗi transaction
             `uvm_info(get_type_name(), 
-                $sformatf("   → Illegal Addr: 0x%8h  | WRITE=%b", tr.paddr, tr.pwrite), 
+                $sformatf(" Illegal Addr: 0x%8h  | WRITE=%b", tr.paddr, tr.pwrite), 
                 UVM_LOW);
         end
 

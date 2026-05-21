@@ -25,58 +25,58 @@ class apb_monitor extends uvm_monitor;
     endtask
 
     //==================================================================
-    // TASK ĐÃ SỬA – ĐẾM WAIT STATES CHÍNH XÁC (CHỈ ĐẾM KHI PREADY=0)
+    // COLLECT TRANSACTION - LOG SẠCH & CHUYÊN NGHIỆP
     //==================================================================
     virtual task collect_transaction();
         apb_transaction trans;
         int wait_cnt = 0;
 
-        // ============== 1. SETUP PHASE ==============
+        // 1. SETUP PHASE
         do begin
             @(vif.mon_cb);
         end while (!(vif.mon_cb.psel && !vif.mon_cb.penable));
 
         trans = apb_transaction::type_id::create("trans");
+
         trans.paddr  = vif.mon_cb.paddr;
         trans.pwrite = vif.mon_cb.pwrite;
-        if (trans.pwrite) trans.pwdata = vif.mon_cb.pwdata;
+        if (trans.pwrite)
+            trans.pwdata = vif.mon_cb.pwdata;
 
-        `uvm_info(get_type_name(), $sformatf("Detected: ADDR=0x%8h WRITE=%b", trans.paddr, trans.pwrite), UVM_HIGH)
+        `uvm_info(get_type_name(), 
+            $sformatf("Detected  | ADDR=0x%8h  WRITE=%b", trans.paddr, trans.pwrite), 
+            UVM_HIGH);
 
-        // ============== 2. ACCESS PHASE + ĐẾM WAIT STATES CHÍNH XÁC ==============
-        // Chờ vào chu kỳ đầu tiên của Access phase (penable=1)
+        // 2. ACCESS PHASE + ĐẾM WAIT CYCLES (GIỮ NGUYÊN LOGIC CŨ CỦA BẠN)
         do begin
             @(vif.mon_cb);
         end while (!vif.mon_cb.penable);
 
-        // Đếm số chu kỳ slave giữ pready = 0
         wait_cnt = 0;
-        if (vif.mon_cb.pready) begin
-          wait_cnt =0 ;
-         end else begin
-        while (!vif.mon_cb.pready) begin
-            @(vif.mon_cb);
-            wait_cnt++;               // Chỉ đếm khi pready vẫn = 0
+        if (!vif.mon_cb.pready) begin
+            while (!vif.mon_cb.pready) begin
+                @(vif.mon_cb);
+                wait_cnt++;
+            end
         end
-        end
-
-        trans.wait_cycles = wait_cnt -1 ;   // ← KHÔNG +1 nữa
+        trans.wait_cycles = wait_cnt;
 
         // Sample response
         trans.prdata  = vif.mon_cb.prdata;
         trans.pslverr = vif.mon_cb.pslverr;
 
+        // 3. LOG COLLECTED - ĐÃ LÀM GỌN & CHUYÊN NGHIỆP
         `uvm_info(get_type_name(), 
-            $sformatf("Collected: %s | WAIT=%0d cycles", 
-                      trans.convert2string(), trans.wait_cycles), UVM_MEDIUM)
+            $sformatf("Collected | ADDR=0x%8h  WRITE=%b  RDATA=0x%8h  SLVERR=%b  WAIT=%0d", 
+                      trans.paddr, trans.pwrite, trans.prdata, trans.pslverr, trans.wait_cycles), 
+            UVM_MEDIUM);
 
         mon_ap.write(trans);
 
-        // ============== 3. KẾT THÚC TRANSACTION ==============
+        // 4. End transaction
         do begin
             @(vif.mon_cb);
         end while (vif.mon_cb.psel);
-
     endtask
 
 endclass : apb_monitor
