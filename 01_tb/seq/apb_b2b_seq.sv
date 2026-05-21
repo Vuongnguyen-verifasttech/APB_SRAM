@@ -32,6 +32,9 @@ class apb_b2b_seq extends apb_base_seq;
         if (!uvm_config_db#(apb_driver)::get(m_sequencer, "", "driver", drv)) begin
             `uvm_fatal(get_type_name(), "Cannot get driver from config_db! B2B mode will not work.");
         end
+        if(!randomize()) begin
+          `uvm_error(get_type_name(),"Randomize num_tx fail in stress sequence");
+       end
     endtask
 
     virtual task body();
