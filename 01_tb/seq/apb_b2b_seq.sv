@@ -28,18 +28,10 @@ class apb_b2b_seq extends apb_base_seq;
     endfunction
 
     virtual task pre_body();
-        // Cách 1: Dùng p_sequencer (chuẩn nhất)
-        if (p_sequencer != null && p_sequencer.driver != null) begin
-            drv = p_sequencer.driver;
-            `uvm_info(get_type_name(), "Got driver via p_sequencer", UVM_MEDIUM);
-            return;
-        end
-
-        // Cách 2: Fallback dùng config_db
-        if (!uvm_config_db#(apb_driver)::get(null, "*", "driver", drv)) begin
+        // Lấy driver từ config_db bằng cách sử dụng m_sequencer làm context
+        if (!uvm_config_db#(apb_driver)::get(m_sequencer, "", "driver", drv)) begin
             `uvm_fatal(get_type_name(), "Cannot get driver from config_db! B2B mode will not work.");
         end
-        `uvm_info(get_type_name(), "Got driver via config_db", UVM_MEDIUM);
     endtask
 
     virtual task body();
