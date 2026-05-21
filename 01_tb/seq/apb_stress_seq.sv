@@ -14,8 +14,8 @@
 `ifndef APB_STRESS_SEQ_SV
 `define APB_STRESS_SEQ_SV
 
-class apb_stress_seq extends uvm_stress_seq;
-    `uvm_component_utils(apb_stress_seq)
+class apb_stress_seq extends apb_base_seq;
+    `uvm_object_utils(apb_stress_seq)
 
     // Random the number of transaction stress
     rand int num_tx;
@@ -49,14 +49,15 @@ class apb_stress_seq extends uvm_stress_seq;
 
             // Log info transaction dc gui
 
-            f (tr.pwrite)
+            if (tr.pwrite) begin
                 `uvm_info(get_type_name(), 
                     $sformatf("   [STRESS] WRITE  ADDR=0x%8h  DATA=0x%8h  WAIT=%0d", 
                               tr.paddr, tr.pwdata, tr.wait_cycles), UVM_HIGH);
-            else
+           end  else begin
                 `uvm_info(get_type_name(), 
                     $sformatf("   [STRESS] READ   ADDR=0x%8h  WAIT=%0d", 
                               tr.paddr, tr.wait_cycles), UVM_HIGH);
+        end
         end
 
         // Banner kết thúc

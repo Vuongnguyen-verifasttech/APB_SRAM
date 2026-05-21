@@ -12,6 +12,7 @@ class apb_base_test extends uvm_test;
     apb_read_seq    read_seq;
     apb_wr_rd_seq   wr_rd_seq;
     apb_illegal_addr_seq illegal_addr_seq;
+    apb_stress_seq stress_seq;
 
     function new(string name = "apb_base_test", uvm_component parent = null);
         super.new(name, parent);
@@ -31,11 +32,13 @@ class apb_base_test extends uvm_test;
         `uvm_info(get_type_name(), "============== START APB TEST ================", UVM_NONE)
 
         // Tạo sequence
-        reset_seq = apb_reset_seq::type_id::create("reset_seq");
-        write_seq = apb_write_seq::type_id::create("write_seq");
-        read_seq  = apb_read_seq::type_id::create("read_seq");
-        wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq");
-        illegal_addr_seq = apb_illegal_addr_seq::type_id::create("illegal_addr_seq");
+        reset_seq = apb_reset_seq::type_id::create("reset_seq", this);
+        write_seq = apb_write_seq::type_id::create("write_seq", this);
+        read_seq  = apb_read_seq::type_id::create("read_seq",this);
+        wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq", this);
+        illegal_addr_seq = apb_illegal_addr_seq::type_id::create("illegal_addr_seq", this);
+        stress_seq = apb_stress_seq::type_id::create("stress_seq",this);
+
 
         // Chạy Reset trước
         reset_seq.start(env.agent.sequencer);
@@ -49,7 +52,7 @@ class apb_base_test extends uvm_test;
 
         // Chạy sequence địa chỉ bất hợp lệ
         illegal_addr_seq.start(env.agent.sequencer);
-
+        stress_seq.start(env.agent.sequencer);
         `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE)
 
         phase.drop_objection(this);
@@ -61,5 +64,4 @@ class apb_base_test extends uvm_test;
     endfunction
 
 endclass : apb_base_test
-
 `endif
