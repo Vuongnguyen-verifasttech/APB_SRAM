@@ -25,7 +25,13 @@ class apb_stress_seq extends apb_base_seq;
 
     function new(string name = "apb_stress_seq");
         super.new(name);
-    endfunction 
+    endfunction
+    
+    virtual task pre_body();
+      if(!randomize()) begin
+          `uvm_error(get_type_name(),"Randomize num_tx fail in stress sequence");
+       end
+       endtask 
 
     virtual task body();
         apb_transaction tr;

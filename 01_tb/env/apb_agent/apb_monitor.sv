@@ -68,7 +68,7 @@ class apb_monitor extends uvm_monitor;
         // 3. LOG COLLECTED - ĐÃ LÀM GỌN & CHUYÊN NGHIỆP
         `uvm_info(get_type_name(), 
             $sformatf("Collected | ADDR=0x%8h  WRITE=%b  RDATA=0x%8h  SLVERR=%b  WAIT=%0d", 
-                      trans.paddr, trans.pwrite, trans.prdata, trans.pslverr, trans.wait_cycles), 
+                      trans.paddr, trans.pwrite, trans.pwrite? 32'hxxxxxxxx : trans.prdata, trans.pslverr, trans.wait_cycles), 
             UVM_MEDIUM);
 
         mon_ap.write(trans);

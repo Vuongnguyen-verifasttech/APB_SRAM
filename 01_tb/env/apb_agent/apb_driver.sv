@@ -30,6 +30,8 @@ class apb_driver extends uvm_driver #(apb_transaction);
         if(!uvm_config_db#(virtual apb_if.driver)::get(this,"","vif", vif)) 
             `uvm_fatal("DRV", " Couldn't get APB interface from config DB")
         endfunction
+
+        bit b2b_mode = 0 ;
 //Run phase
     virtual task run_phase(uvm_phase phase);
         //Init default values for APB signals
@@ -85,8 +87,13 @@ class apb_driver extends uvm_driver #(apb_transaction);
         tr.pslverr = vif.drv_cb.pslverr; 
 
         // End transaction 
+        if (!b2b_mode) begin
         vif.drv_cb.psel <=0;
         vif.drv_cb.penable <= 0;
+        end
+        else begin 
+          vif.drv_cb.penable <= 0;
+         end
     endtask
 endclass 
 
