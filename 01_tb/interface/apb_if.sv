@@ -35,7 +35,7 @@ interface apb_if #(
     clocking drv_cb @(posedge pclk);
         default input #1step output #0; // #1step: sample truowcs khi clock edge 1 chut --> tranh race condition
                                         // #0: drive ngay lập tức khi có clock edge, không delay
-        output  psel, penable, pwrite, paddr, pwdata;
+        output  psel, penable, pwrite, paddr, pwdata, presetn;
         input  prdata, pready, pslverr;
 
     endclocking : drv_cb 
@@ -49,7 +49,7 @@ interface apb_if #(
     endclocking : mon_cb
 
 //======== Modport ==============================
-    modport driver (  clocking drv_cb, input presetn);
+    modport driver (  clocking drv_cb, output presetn);
     modport monitor (clocking mon_cb, input presetn);
     //modports of driver & monitor only include clocking blocks and reset because other signals are included in clocking blocks. 
     //====== Modport cho DUT ============================

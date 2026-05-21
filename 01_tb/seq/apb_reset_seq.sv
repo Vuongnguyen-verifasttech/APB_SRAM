@@ -1,14 +1,7 @@
 //==============================================================================
 // File          : apb_reset_seq.sv
-// Author        : [vnguyen]
-// Company       : [Verifast]
-// Project       : APB Verification Environment
-// Description   : APB Reset Sequence definition
-//                 - generate reset signals for the APB interface
-//                      
-//
-// Version       : 1.0
-// Date          : 21-May-2026
+// Description   : Reset Sequence - Kiểm tra hành vi reset active-low
+// Testplan ID   : APB_01
 //==============================================================================
 
 `ifndef APB_RESET_SEQ_SV
@@ -20,7 +13,6 @@ class apb_reset_seq extends apb_base_seq;
 
     rand int reset_duration;
 
-    // Virtual interface
     virtual apb_if vif;
 
     constraint reset_c {
@@ -31,12 +23,11 @@ class apb_reset_seq extends apb_base_seq;
         super.new(name);
     endfunction
 
-    // Lấy virtual interface từ config_db
-    virtual function void pre_body();
-        if(!uvm_config_db#(virtual apb_if)::get(null, "", "vif", vif)) begin
+    virtual task pre_body();
+        if(!uvm_config_db#(virtual apb_if.driver)::get(null, "", "vif", vif)) begin
             `uvm_fatal(get_type_name(), "Failed to get virtual interface from config_db!");
         end
-    endfunction
+    endtask
 
     virtual task body();
         apb_transaction tr;
@@ -49,7 +40,7 @@ class apb_reset_seq extends apb_base_seq;
         `uvm_info(get_type_name(), $sformatf("Asserting presetn = 0 for %0d cycles", reset_duration), UVM_MEDIUM);
 
         repeat(reset_duration) begin
-            @(vif.drv_cb);
+            @(vif.drv_cb);                    // ← ĐÃ SỬA: drv_cb
             vif.drv_cb.presetn <= 1'b0;
         end
 
@@ -88,7 +79,7 @@ class apb_reset_seq extends apb_base_seq;
             finish_item(tr);
         end
 
-        `uvm_info(get_type_name(), "=== APB RESET SEQUENCE COMPLETED ===", UVM_NONE);
+        `uvm_info(get_type_name(), "=== APB RESET SEQUENCE COMPLETED ===", UVM_MEDIUM);
     endtask
 
 endclass : apb_reset_seq
