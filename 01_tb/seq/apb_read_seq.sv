@@ -26,7 +26,9 @@ class apb_read_seq extends apb_base_seq;
 
     virtual task body();
         apb_transaction tr;
-
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "           START APB_06: READ  SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
         repeat(num_tx) begin
             tr = apb_transaction::type_id::create("tr");
 
@@ -37,6 +39,9 @@ class apb_read_seq extends apb_base_seq;
 
             `uvm_info(get_type_name(), $sformatf("TASK READ DATA : Sent Read: ADDR=0x%8h", tr.paddr), UVM_MEDIUM)
         end
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "           COMPLETE APB_O6: READ SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
     endtask
 
 endclass : apb_read_seq

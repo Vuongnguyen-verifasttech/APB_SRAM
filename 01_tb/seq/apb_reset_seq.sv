@@ -32,8 +32,10 @@ class apb_reset_seq extends apb_base_seq;
     virtual task body();
         apb_transaction tr;
 
-        `uvm_info(get_type_name(), "=== STARTING APB RESET SEQUENCE ===", UVM_NONE)
-
+       // `uvm_info(get_type_name(), "=== STARTING APB RESET SEQUENCE ===", UVM_NONE)
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+        `uvm_info(get_type_name(), "           START APB_01: RESET SEQUENCE", UVM_NONE);
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
         //===============================================
         // 1. Assert Reset (presetn = 0)
         //===============================================
@@ -78,8 +80,10 @@ class apb_reset_seq extends apb_base_seq;
             tr.seq_name = "RESET_SEQ_READ";
             finish_item(tr);
         end
-
-        `uvm_info(get_type_name(), "=== APB RESET SEQUENCE COMPLETED ===", UVM_MEDIUM);
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+        `uvm_info(get_type_name(), "           COMPLETE APB_01: RESET SEQUENCE", UVM_NONE);
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+        //`uvm_info(get_type_name(), "=== APB RESET SEQUENCE COMPLETED ===", UVM_MEDIUM);
     endtask
 
 endclass : apb_reset_seq

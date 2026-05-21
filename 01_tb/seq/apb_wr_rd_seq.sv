@@ -26,7 +26,9 @@ class apb_wr_rd_seq extends apb_base_seq;
 
     virtual task body();
         apb_transaction wr_trans, rd_trans;
-
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "          START APB_04: WRITE & READ SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
         repeat(num_tx) begin
             // ==================== WRITE ====================
             wr_trans = apb_transaction::type_id::create("wr_trans");
@@ -55,6 +57,9 @@ class apb_wr_rd_seq extends apb_base_seq;
             `uvm_info(get_type_name(), $sformatf("READ : ADDR=0x%8h RDATA=0x%8h", 
                       rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)
         end
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "           COMPLETE APB_04: WRITE & READ  SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
     endtask
 
 endclass : apb_wr_rd_seq

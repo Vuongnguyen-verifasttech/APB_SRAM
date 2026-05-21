@@ -25,6 +25,10 @@ class apb_write_seq extends apb_base_seq;
 
     virtual task body();
         apb_transaction tr;
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "           START APB_05: WRITE  SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+
         repeat(num_tx) begin 
                 tr = apb_transaction::type_id::create("tr");
                 start_item(tr);
@@ -33,6 +37,9 @@ class apb_write_seq extends apb_base_seq;
                 finish_item(tr);
         `uvm_info(get_type_name(), $sformatf("TASK WRITE: Sent Write: ADDR = 0x%8h, DATA = 0x%8h", tr.paddr, tr.pwdata), UVM_MEDIUM)
         end
+        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
+                `uvm_info(get_type_name(), "           COMPLETE APB_05:WRITE SEQUENCE", UVM_NONE);
+                        `uvm_info(get_type_name(), "============================================================", UVM_NONE);
     endtask
 
 endclass
