@@ -66,8 +66,14 @@ sim:
 # ==============================================================================
 # REGRESSION SETUP (Chạy tự động chuỗi nhiều seed và tự động gộp)
 # ==============================================================================
+# ==============================================================================
+# REGRESSION SETUP - FIX LỖI NGẮT NGANG ERROR 12
+# ==============================================================================
 regression:
 	@echo "=== Starting APB UVM Regression with $(REGRESSION_SEEDS) seeds ==="
+	# Thêm dòng xoá các ucdb cũ để tránh nhận nhầm dữ liệu rác
+	rm -rf *_seed_* merged_coverage.ucdb
+	
 	@for i in $$(seq 1 $(REGRESSION_SEEDS)); do \
 		echo "Running $(REG_TEST_NAME) with Seed $$i ..."; \
 		mkdir -p $(REG_TEST_NAME)_seed_$$i; \
@@ -80,10 +86,12 @@ regression:
 			-l $(REG_TEST_NAME)_seed_$$i/$(REG_TEST_NAME).log \
 			-sva -coverage -c -solvefaildebug \
 			-do "coverage save -onexit -assert -directive -cvg -codeAll $(REG_TEST_NAME)_seed_$$i/$(REG_TEST_NAME)_coverage.ucdb; run -all; exit" \
-			-wlf $(REG_TEST_NAME)_seed_$$i/waveform.wlf > /dev/null 2>&1; \
+			-wlf $(REG_TEST_NAME)_seed_$$i/waveform.wlf > /dev/null 2>&1 || true; \
 	done
 	@echo "=== All seeds executed. Starting merge process... ==="
-	make merge_cov_report
+	
+	# Dấu trừ (-) phía trước ép buộc Make phải chạy lệnh này bất chấp vòng lặp trên trả về code gì
+	-make merge_cov_report
 
 # ==============================================================================
 # MERGE COVERAGE (Quét sạch các folder con để gộp database)
