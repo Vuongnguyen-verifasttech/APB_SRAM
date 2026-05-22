@@ -28,7 +28,10 @@ compile:
 		$(TB_FILE)
 
 sim:
-	vsim -c $(TOP_MODULE) -do "run -all; quit -f"
+	vsim -coverage -c $(TOP_MODULE) \
+		+UVM_TESTNAME=apb_base_test \
+		+UVM_SEED=$(SEED) \
+		-do "run -all; coverage save -onexit coverage_seed_$(SEED).ucdb; quit -f"
 
 gui:
 	vsim -voptargs="+acc" $(TOP_MODULE) -do "add wave -r /*; run -all"
