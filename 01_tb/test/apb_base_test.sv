@@ -7,13 +7,14 @@ class apb_base_test extends uvm_test;
 
     apb_env env;
 
-    apb_reset_seq   reset_seq;
-    apb_write_seq   write_seq;
-    apb_read_seq    read_seq;
-    apb_wr_rd_seq   wr_rd_seq;
-    apb_illegal_addr_seq illegal_addr_seq;
-    apb_stress_seq stress_seq;
-    apb_b2b_seq b2b_seq;
+    // All sequences
+    apb_reset_seq        reset_seq;
+    apb_write_seq        write_seq;
+    apb_read_seq         read_seq;
+    apb_wr_rd_seq        wr_rd_seq;
+    apb_illegal_addr_seq illegal_seq;
+    apb_b2b_seq          b2b_seq;
+    apb_stress_seq       stress_seq;
 
     function new(string name = "apb_base_test", uvm_component parent = null);
         super.new(name, parent);
@@ -30,33 +31,35 @@ class apb_base_test extends uvm_test;
 
         phase.raise_objection(this);
 
-        `uvm_info(get_type_name(), "============== START APB TEST ================", UVM_NONE)
+        `uvm_info(get_type_name(), "============== START FULL APB TEST ================", UVM_NONE);
 
-        // Tạo sequence
-        reset_seq = apb_reset_seq::type_id::create("reset_seq", this);
-        write_seq = apb_write_seq::type_id::create("write_seq", this);
-        read_seq  = apb_read_seq::type_id::create("read_seq",this);
-        wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq", this);
-        illegal_addr_seq = apb_illegal_addr_seq::type_id::create("illegal_addr_seq", this);
-        stress_seq = apb_stress_seq::type_id::create("stress_seq",this);
-        b2b_seq = apb_b2b_seq::type_id::create("b2b_seq", this);
-
-
-        // Chạy Reset trước
+        // 1. Reset Behavior
+        reset_seq = apb_reset_seq::type_id::create("reset_seq");
         reset_seq.start(env.agent.sequencer);
 
-        // Chạy các sequence cơ bản
-        repeat(5) begin
-            write_seq.start(env.agent.sequencer);
-            read_seq.start(env.agent.sequencer);
-            wr_rd_seq.start(env.agent.sequencer);
-        end
+        // 2. Basic Functionality
+        write_seq = apb_write_seq::type_id::create("write_seq");
+        read_seq  = apb_read_seq::type_id::create("read_seq");
+        write_seq.start(env.agent.sequencer);
+        read_seq.start(env.agent.sequencer);
 
-        // Chạy sequence địa chỉ bất hợp lệ
-        illegal_addr_seq.start(env.agent.sequencer);
-        stress_seq.start(env.agent.sequencer);
+        // 3. Data Integrity
+        wr_rd_seq = apb_wr_rd_seq::type_id::create("wr_rd_seq");
+        wr_rd_seq.start(env.agent.sequencer);
+
+        // 4. Error Handling
+        illegal_seq = apb_illegal_addr_seq::type_id::create("illegal_seq");
+        illegal_seq.start(env.agent.sequencer);
+
+        // 5. Back-to-Back
+        b2b_seq = apb_b2b_seq::type_id::create("b2b_seq");
         b2b_seq.start(env.agent.sequencer);
-        `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE)
+
+        // 6. Stress Test
+        stress_seq = apb_stress_seq::type_id::create("stress_seq");
+        stress_seq.start(env.agent.sequencer);
+
+        `uvm_info(get_type_name(), "=== All sequences completed ===", UVM_NONE);
 
         phase.drop_objection(this);
     endtask
@@ -67,4 +70,5 @@ class apb_base_test extends uvm_test;
     endfunction
 
 endclass : apb_base_test
+
 `endif
