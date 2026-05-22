@@ -35,6 +35,32 @@ gui:
 
 run: clean init compile sim
 
+# =============================================
+# REGRESSION SETUP
+# =============================================
+
+REGRESSION_SEEDS = 10          # Số seed muốn chạy
+TEST_NAME = apb_base_test      # Test mặc định
+
+# Chạy 1 lần (debug)
+run:
+	make clean compile sim
+
+# Chạy Regression đầy đủ
+regression:
+	@echo "=== Starting APB UVM Regression with $(REGRESSION_SEEDS) seeds ==="
+	@for i in $$(seq 1 $(REGRESSION_SEEDS)); do \
+		echo "Running seed $$i ..."; \
+		vsim -c $(TOP_MODULE) +UVM_TESTNAME=$(TEST_NAME) +UVM_SEED=$$i \
+			-do "run -all; quit -f" > run_seed_$$i.log; \
+		echo "Seed $$i completed. Check run_seed_$$i.log"; \
+	done
+	@echo "=== Regression Completed with $(REGRESSION_SEEDS) seeds ==="
+
+# Chạy nhanh regression (5 seeds)
+regression-quick:
+	REGRESSION_SEEDS=5 make regression
+
 clean:
 	rm -rf work transcript vsim.wlf modelsim.ini *.log *.vcd *.fsdb
 	@echo "=== Clean completed! ==="
