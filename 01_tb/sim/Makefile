@@ -57,6 +57,12 @@ regression:
 	done
 	@echo "=== Regression Completed with $(REGRESSION_SEEDS) seeds ==="
 
+merge:
+	vcover merge -out total_coverage.ucdb coverage_seed_*.ucdb
+	vcover report -details -cvg -file coverage_report.txt total_coverage.ucdb
+	vcover report -details -html -file cov_html total_coverage.ucdb
+	@echo "Coverage merged! Open cov_html/index.html"
+
 # Chạy nhanh regression (5 seeds)
 regression-quick:
 	REGRESSION_SEEDS=5 make regression
