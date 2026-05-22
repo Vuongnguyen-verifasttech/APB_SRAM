@@ -28,47 +28,12 @@ compile:
 		$(TB_FILE)
 
 sim:
-	vsim -coverage -c $(TOP_MODULE) \
-		+UVM_TESTNAME=apb_base_test \
-		+UVM_SEED=$(SEED) \
-		-do "run -all; coverage save -onexit coverage_seed_$(SEED).ucdb; quit -f"
+	vsim -c $(TOP_MODULE) -do "run -all; quit -f"
 
 gui:
 	vsim -voptargs="+acc" $(TOP_MODULE) -do "add wave -r /*; run -all"
 
 run: clean init compile sim
-
-# =============================================
-# REGRESSION SETUP
-# =============================================
-
-REGRESSION_SEEDS = 10          # Số seed muốn chạy
-TEST_NAME = apb_base_test      # Test mặc định
-
-# Chạy 1 lần (debug)
-run:
-	make clean compile sim
-
-# Chạy Regression đầy đủ
-regression:
-	@echo "=== Starting APB UVM Regression with $(REGRESSION_SEEDS) seeds ==="
-	@for i in $$(seq 1 $(REGRESSION_SEEDS)); do \
-		echo "Running seed $$i ..."; \
-		vsim -c $(TOP_MODULE) +UVM_TESTNAME=$(TEST_NAME) +UVM_SEED=$$i \
-			-do "run -all; quit -f" > run_seed_$$i.log; \
-		echo "Seed $$i completed. Check run_seed_$$i.log"; \
-	done
-	@echo "=== Regression Completed with $(REGRESSION_SEEDS) seeds ==="
-
-merge:
-	vcover merge -out total_coverage.ucdb coverage_seed_*.ucdb
-	vcover report -details -cvg -file coverage_report.txt total_coverage.ucdb
-	vcover report -details -html -file cov_html total_coverage.ucdb
-	@echo "Coverage merged! Open cov_html/index.html"
-
-# Chạy nhanh regression (5 seeds)
-regression-quick:
-	REGRESSION_SEEDS=5 make regression
 
 clean:
 	rm -rf work transcript vsim.wlf modelsim.ini *.log *.vcd *.fsdb
