@@ -18,7 +18,7 @@ class apb_read_seq extends apb_base_seq;
 
     `uvm_object_utils(apb_read_seq)
 
-    rand int num_tx = 16;
+    rand int num_tx = 128;
 
     function new(string name = "apb_read_seq");
         super.new(name);

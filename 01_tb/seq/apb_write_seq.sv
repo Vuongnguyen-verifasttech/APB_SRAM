@@ -17,7 +17,7 @@
 class apb_write_seq extends apb_base_seq;
     `uvm_object_utils(apb_write_seq)
 
-    rand int num_tx = 16;
+    rand int num_tx = 128;
 
     function new(string name = "apb_write_seq");
         super.new(name);

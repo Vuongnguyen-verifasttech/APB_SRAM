@@ -4,11 +4,9 @@
 // Company       : [Verifast]
 // Project       : APB Verification Environment
 // Description   : APB Driver definition
-//                 - Handles the driving of APB transactions to the DUT
-//                      
-//
-// Version       : 1.0
-// Date          : 12-May-2026
+//                 - Handles driving APB transactions to the DUT with B2B support
+// Version       : 1.2
+// Date          : 22-May-2026
 //==============================================================================
 
 `ifndef APB_DRIVER_SV
@@ -16,86 +14,99 @@
 
 class apb_driver extends uvm_driver #(apb_transaction);
     `uvm_component_utils (apb_driver)
+    
     // Virtual interface to drive signals
-    virtual apb_if vif;
+    virtual apb_if.driver vif;
+    
+    // Biến cấu hình chế độ chạy gối đầu liên tục (Back-to-Back)
+    bit b2b_mode = 0;
 
     function new(string name = "apb_driver", uvm_component parent = null);
         super.new(name, parent);
     endfunction 
 
-//============= Main driving task ============================
-// Build phase: get the virtual interface from the config DB
+    // Build phase: get the virtual interface from the config DB
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if(!uvm_config_db#(virtual apb_if.driver)::get(this,"","vif", vif)) 
-            `uvm_fatal("DRV", " Couldn't get APB interface from config DB")
-        endfunction
+        if(!uvm_config_db#(virtual apb_if.driver)::get(this,"","vif", vif)) begin
+            `uvm_fatal("DRV", "Couldn't get APB interface from config DB")
+        end
+    endfunction
 
-        bit b2b_mode = 0 ;
-//Run phase
+    // Run phase
     virtual task run_phase(uvm_phase phase);
-        //Init default values for APB signals
-
+        // Khởi tạo các tín hiệu bus về giá trị mặc định ban đầu
         reset_bus();
-        // Chờ cho đến khi reset kết thúc (presetn = 1)
+        
+        // Chờ cho đến khi hệ thống nhả Reset (presetn tích cực mức cao)
         wait(vif.presetn === 1'b1);
-
+        `uvm_info(get_type_name(), "Driver started after reset released", UVM_MEDIUM);
         
         forever begin 
-            // Get the next transaction from the sequencer
+            // Lấy transaction tiếp theo từ sequencer
             seq_item_port.get_next_item(req);
-
-            // Convert transaction to APB signal 
+            
+            // Thực thi đưa dữ liệu transaction ra các đường pin vật lý của Bus
             drive_transaction(req);
-
-            // Indicate to the sequencer that the item is done
+            
+            // Báo cáo hoàn thành item hiện tại để sequencer giải phóng
             seq_item_port.item_done();
         end
     endtask
 
-    // task reset bus 
+    // Task reset bus 
     task reset_bus ();
-        vif.drv_cb.psel <= 0; 
+        vif.drv_cb.psel    <= 0; 
         vif.drv_cb.penable <= 0; 
-        vif.drv_cb.pwrite <= 0; 
-        vif.drv_cb.paddr <= 0;
-        vif.drv_cb.pwdata <= 0; 
+        vif.drv_cb.pwrite  <= 0; 
+        vif.drv_cb.paddr   <= 0;
+        vif.drv_cb.pwdata  <= 0;
     endtask 
 
-
-
-    // Task thuc hien APB protocol 
+    // Task thực hiện giao thức APB 
     task drive_transaction(apb_transaction tr);
-        @(vif.drv_cb);
-        //====== Set up phase =============
-        vif.drv_cb.psel <= 1;
+        // ====== 1. SETUP PHASE =============
+        // Kéo psel lên tích cực ngay lập tức và giữ penable = 0
+        vif.drv_cb.psel    <= 1;
         vif.drv_cb.penable <= 0;
-        vif.drv_cb.paddr <= tr.paddr; //// Đưa địa chỉ từ transaction ra bus
-        vif.drv_cb.pwrite <= tr.pwrite;
-        if (tr.pwrite) vif.drv_cb.pwdata <= tr.pwdata;
-        @(vif.drv_cb);
-
-        //======== Acess phase=============
-        vif.drv_cb.penable <= 1; 
-        // Wait until pready = 1
-        while (!vif.drv_cb.pready) begin 
-            @(vif.drv_cb);
+        vif.drv_cb.paddr   <= tr.paddr; // Cập nhật địa chỉ mới từ transaction
+        vif.drv_cb.pwrite  <= tr.pwrite;
+        
+        if (tr.pwrite) begin
+            vif.drv_cb.pwdata <= tr.pwdata; // Cập nhật dữ liệu ghi nếu là lệnh WRITE
         end
+        
+        // Chờ đúng 1 clock để kết thúc Setup Phase và chuyển dịch sang Access Phase
+        @(vif.drv_cb); 
 
-        // Logic cho lenh READ
-        if (!tr.pwrite) tr.prdata = vif.drv_cb.prdata;
+        // ======== 2. ACCESS PHASE =============
+        vif.drv_cb.penable <= 1;
+        
+        // Vòng lặp chờ phản hồi sẵn sàng từ DUT (pready == 1)
+        do begin
+            @(vif.drv_cb);
+        end while (!vif.drv_cb.pready);
+
+        // Thu thập dữ liệu phản hồi từ phía Slave nếu đây là lệnh READ
+        if (!tr.pwrite) begin
+            tr.prdata = vif.drv_cb.prdata;
+        end
         tr.pslverr = vif.drv_cb.pslverr; 
 
-        // End transaction 
+        // ======== 3. END TRANSACTION & TRANSITION =============
         if (!b2b_mode) begin
-        vif.drv_cb.psel <=0;
-        vif.drv_cb.penable <= 0;
-        end
+            // Chế độ THƯỜNG: Hạ toàn bộ tín hiệu để trả bus về trạng thái nghỉ Idle
+            vif.drv_cb.psel    <= 0;
+            vif.drv_cb.penable <= 0;
+            @(vif.drv_cb); // Cho phép bus nghỉ tối thiểu 1 chu kỳ Idle hoàn chỉnh
+        end 
         else begin 
-          vif.drv_cb.penable <= 0;
-         end
+            // Chế độ BACK-TO-BACK: Chỉ hạ penable để ngắt Transaction cũ.
+            // Tuyệt đối giữ psel = 1 và KHÔNG gọi lệnh chờ clock @(vif.drv_cb).
+            // Ngay chu kỳ sau, task được tái gọi sẽ đè dữ liệu mới lên bus tạo Setup Phase chuẩn.
+            vif.drv_cb.penable <= 0;
+        end
     endtask
 endclass 
 
-`endif 
- 
+`endif
