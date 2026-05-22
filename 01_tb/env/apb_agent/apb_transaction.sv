@@ -45,8 +45,8 @@ class apb_transaction extends uvm_sequence_item;
     constraint wait_range {
       wait_cycles inside {[0:8]};
       soft wait_cycles dist {
-        // 0 := 20,
-        [0:3] := 50,
+         0 := 20,
+        [1:3] := 30,
         [4:6] :=30,
         [7:8] := 20
       };

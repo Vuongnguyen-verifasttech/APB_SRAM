@@ -59,7 +59,7 @@ class apb_monitor extends uvm_monitor;
                 wait_cnt++;
             end
         end
-        trans.wait_cycles = wait_cnt;
+        trans.wait_cycles = wait_cnt-1;
 
         // Sample response
         trans.prdata  = vif.mon_cb.prdata;

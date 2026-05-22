@@ -13,7 +13,7 @@ class apb_illegal_addr_seq extends apb_base_seq;
     rand int num_tx;
 
     constraint num_tx_c {
-        num_tx inside {[8:20]};
+        num_tx inside {[50:100]};
     }
 
     function new(string name = "apb_illegal_addr_seq");
