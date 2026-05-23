@@ -7,9 +7,9 @@ PKG_FILE     = ../include/apb_pkg.sv
 TB_FILE      = ../tb/tb_top.sv
 FILELIST     = filelist.f
 
-# ====================== COVERAGE SETTINGS (dành cho 10.6b) ======================
-COV_COMPILE  = -cover=cbesf
-COV_SIM      = -coverage +cover=cbesf
+# ====================== COVERAGE SETTINGS (10.6b) ======================
+COV_COMPILE  = -cover bcesf          # b=branch, c=condition, e=expression, s=statement, f=FSM
+COV_SIM      = -coverage
 COV_MERGE_DIR= cov_merge
 COV_REPORT   = coverage_report
 
@@ -57,20 +57,19 @@ run_regression:
 	done
 	@echo "=== Regression completed! ==="
 
-# ====================== MERGE COVERAGE ======================
+# ====================== MERGE & REPORT ======================
 merge_coverage:
 	@echo "=== Merging Coverage Databases ==="
 	@rm -f $(COV_MERGE_DIR)/merged.ucdb
 	vcover merge -out $(COV_MERGE_DIR)/merged.ucdb $(COV_MERGE_DIR)/*.ucdb
 	@echo "=== Coverage merged successfully ==="
 
-# ====================== COVERAGE REPORT ======================
 report:
 	@echo "=== Generating Coverage Report ==="
 	mkdir -p $(COV_REPORT)
 	vcover report -details -html -out $(COV_REPORT) $(COV_MERGE_DIR)/merged.ucdb
 	vcover report -details -txt $(COV_MERGE_DIR)/merged.ucdb > $(COV_REPORT)/summary.txt
-	@echo "=== Report ready at: ./$(COV_REPORT)/index.html ==="
+	@echo "=== Report ready: ./$(COV_REPORT)/index.html ==="
 
 # ====================== UTILITY ======================
 run: clean init compile sim
@@ -86,6 +85,5 @@ clean:
 debug: clean init compile gui
 
 help:
-	@echo "make all                  --> Full flow"
+	@echo "make all                  --> Full regression + coverage"
 	@echo "NUM_SEEDS=10 make all     --> Chạy 10 seeds"
-	@echo "make report               --> Chỉ generate report"
