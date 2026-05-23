@@ -66,8 +66,8 @@ merge_coverage:
 report:
 	@echo "=== Generating Report ==="
 	mkdir -p $(COV_REPORT)
-	vcover report -details -html -out $(COV_REPORT) $(COV_MERGE_DIR)/merged.ucdb
-	vcover report -details -txt $(COV_MERGE_DIR)/merged.ucdb > $(COV_REPORT)/summary.txt
+	vcover report -details -html -htmldir $(COV_REPORT) $(COV_MERGE_DIR)/merged.ucdb
+	vcover report -details $(COV_MERGE_DIR)/merged.ucdb > $(COV_REPORT)/summary.txt
 	@echo "✅ Report: ./$(COV_REPORT)/index.html"
 
 clean:
