@@ -1,5 +1,5 @@
 # =============================================
-# Makefile cho APB UVM - Questasim (Regression + Coverage)
+# Makefile cho APB UVM - Questasim 10.6b (Regression + Coverage)
 # =============================================
 
 TOP_MODULE   = tb_top
@@ -7,14 +7,15 @@ PKG_FILE     = ../include/apb_pkg.sv
 TB_FILE      = ../tb/tb_top.sv
 FILELIST     = filelist.f
 
-# ====================== COVERAGE SETTINGS ======================
-COV_OPTS     = -coverage -coveropt 3 +cover=cbesf
+# ====================== COVERAGE SETTINGS (dành cho 10.6b) ======================
+COV_COMPILE  = -cover=cbesf
+COV_SIM      = -coverage +cover=cbesf
 COV_MERGE_DIR= cov_merge
 COV_REPORT   = coverage_report
 
 # ====================== REGRESSION SETTINGS ======================
-NUM_SEEDS    ?= 5                    # Số lần chạy với seed random
-TEST_NAME    ?= apb_base_test        # Default test
+NUM_SEEDS    ?= 5
+TEST_NAME    ?= apb_base_test
 
 all: clean init compile run_regression merge_coverage report
 
@@ -29,30 +30,30 @@ compile:
 		+incdir+../seq \
 		+incdir+../test \
 		+incdir+../include \
-		+incdir+../coverage \
+		$(COV_COMPILE) \
 		-f $(FILELIST) \
 		$(PKG_FILE) \
 		$(TB_FILE)
 
 # ====================== SINGLE RUN ======================
 sim:
-	vsim -c $(COV_OPTS) \
+	vsim -c $(COV_SIM) \
 		$(TOP_MODULE) \
 		+UVM_TESTNAME=$(TEST_NAME) \
-		-do "run -all; coverage save $(TEST_NAME).ucdb; quit -f"
+		-do "run -all; coverage save $(TEST_NAME).ucdb -onexit; quit -f"
 
 # ====================== REGRESSION ======================
 run_regression:
-	@echo "=== Starting Regression with $(NUM_SEEDS) seeds ==="
+	@echo "=== Starting Regression with $(NUM_SEEDS) seeds (Questa 10.6b) ==="
 	@mkdir -p regression_logs $(COV_MERGE_DIR)
 	@for i in $$(seq 1 $(NUM_SEEDS)); do \
-		echo "Running seed $$i ..."; \
-		vsim -c $(COV_OPTS) \
+		echo "→ Running seed $$i ..."; \
+		vsim -c $(COV_SIM) \
 			$(TOP_MODULE) \
 			+UVM_TESTNAME=$(TEST_NAME) \
 			+UVM_SEED=$$i \
-			-do "run -all; coverage save $(COV_MERGE_DIR)/$(TEST_NAME)_seed$$i.ucdb; quit -f" \
-			> regression_logs/$(TEST_NAME)_seed$$i.log 2>&1; \
+			-do "run -all; coverage save $(COV_MERGE_DIR)/$(TEST_NAME)_seed$$i.ucdb -onexit; quit -f" \
+			> regression_logs/$(TEST_NAME)_seed$$i.log 2>&1 || echo "Seed $$i failed!"; \
 	done
 	@echo "=== Regression completed! ==="
 
@@ -60,15 +61,16 @@ run_regression:
 merge_coverage:
 	@echo "=== Merging Coverage Databases ==="
 	@rm -f $(COV_MERGE_DIR)/merged.ucdb
-	vcover merge -stats -out $(COV_MERGE_DIR)/merged.ucdb $(COV_MERGE_DIR)/*.ucdb
+	vcover merge -out $(COV_MERGE_DIR)/merged.ucdb $(COV_MERGE_DIR)/*.ucdb
 	@echo "=== Coverage merged successfully ==="
 
 # ====================== COVERAGE REPORT ======================
 report:
 	@echo "=== Generating Coverage Report ==="
+	mkdir -p $(COV_REPORT)
 	vcover report -details -html -out $(COV_REPORT) $(COV_MERGE_DIR)/merged.ucdb
 	vcover report -details -txt $(COV_MERGE_DIR)/merged.ucdb > $(COV_REPORT)/summary.txt
-	@echo "=== Coverage report generated at ./$(COV_REPORT)/ ==="
+	@echo "=== Report ready at: ./$(COV_REPORT)/index.html ==="
 
 # ====================== UTILITY ======================
 run: clean init compile sim
@@ -83,11 +85,7 @@ clean:
 
 debug: clean init compile gui
 
-# ====================== HELP ======================
 help:
-	@echo "Available targets:"
-	@echo "  make run_regression     - Chạy regression với nhiều seed"
-	@echo "  make merge_coverage     - Merge tất cả .ucdb"
-	@echo "  make report             - Tạo HTML + TXT coverage report"
-	@echo "  make all                - Full flow: compile + regression + merge + report"
-	@echo "  NUM_SEEDS=10 make all   - Chạy với 10 seeds"
+	@echo "make all                  --> Full flow"
+	@echo "NUM_SEEDS=10 make all     --> Chạy 10 seeds"
+	@echo "make report               --> Chỉ generate report"
