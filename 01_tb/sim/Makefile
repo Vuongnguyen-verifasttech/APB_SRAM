@@ -39,6 +39,7 @@ sim:
 		-do "run -all; coverage save $(TEST_NAME).ucdb -onexit; quit -f"
 
 # Regression
+# Regression
 run_regression:
 	@echo "=== Running Regression $(NUM_SEEDS) seeds ==="
 	@mkdir -p regression_logs $(COV_MERGE_DIR)
@@ -48,7 +49,7 @@ run_regression:
 			$(TOP_MODULE) \
 			+UVM_TESTNAME=$(TEST_NAME) \
 			+UVM_SEED=$$i \
-			-do "run -all; coverage save $(COV_MERGE_DIR)/$(TEST_NAME)_seed$$i.ucdb -onexit; quit -f" \
+			-do "coverage save -onexit $(COV_MERGE_DIR)/$(TEST_NAME)_seed$$i.ucdb; run -all; quit -f" \
 			> regression_logs/$(TEST_NAME)_seed$$i.log 2>&1; \
 	done
 
