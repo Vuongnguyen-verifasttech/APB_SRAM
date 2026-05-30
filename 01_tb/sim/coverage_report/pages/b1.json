@@ -1,0 +1,1636 @@
+var g_data = {
+b9:[{dummy:0},
+{anchor:'cvg15',items:[{z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        end else if (psel && !penable) begin        // Setup Phase',f:'../dut/apb_sram.sv',l:'41',h:'3126',c:'g'}
+,{cr:'c',t:'A',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',h:'19701',c:'g'}
+]},
+{anchor:'cvg16',items:[{z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'50',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'50',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../dut/apb_sram.sv',l:'59',h:'22788',c:'g'}
+]},
+{anchor:'cvg17',items:[{z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',h:'16737',c:'g'}
+,{cr:'c',t:'A',z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',h:'6051',c:'g'}
+]},
+{anchor:'cvg18',items:[{z:'                if (wait_cnt < wait_cycles) begin',f:'../dut/apb_sram.sv',l:'66',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if (wait_cnt < wait_cycles) begin',f:'../dut/apb_sram.sv',l:'66',h:'13317',c:'g'}
+,{cr:'c',t:'E',z:'                else begin',f:'../dut/apb_sram.sv',l:'70',h:'3420',c:'g'}
+]},
+{anchor:'cvg19',items:[{z:'                    if (paddr >= MEM_SIZE) begin',f:'../dut/apb_sram.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (paddr >= MEM_SIZE) begin',f:'../dut/apb_sram.sv',l:'75',h:'891',c:'g'}
+,{cr:'c',t:'T',z:'                    else if (pwrite) begin',f:'../dut/apb_sram.sv',l:'80',h:'1311',c:'g'}
+,{cr:'c',t:'E',z:'                    else begin',f:'../dut/apb_sram.sv',l:'84',h:'1218',c:'g'}
+]}],
+b14:[{dummy:0},
+{anchor:'cvg15',items:[{z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        end else if (psel && !penable) begin        // Setup Phase',f:'../dut/apb_sram.sv',l:'41',h:'3126',c:'g'}
+,{cr:'c',t:'A',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'39',h:'19701',c:'g'}
+]},
+{anchor:'cvg16',items:[{z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'50',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!presetn) begin',f:'../dut/apb_sram.sv',l:'50',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../dut/apb_sram.sv',l:'59',h:'22788',c:'g'}
+]},
+{anchor:'cvg17',items:[{z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',h:'16737',c:'g'}
+,{cr:'c',t:'A',z:'            if (psel && penable) begin',f:'../dut/apb_sram.sv',l:'64',h:'6051',c:'g'}
+]},
+{anchor:'cvg18',items:[{z:'                if (wait_cnt < wait_cycles) begin',f:'../dut/apb_sram.sv',l:'66',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if (wait_cnt < wait_cycles) begin',f:'../dut/apb_sram.sv',l:'66',h:'13317',c:'g'}
+,{cr:'c',t:'E',z:'                else begin',f:'../dut/apb_sram.sv',l:'70',h:'3420',c:'g'}
+]},
+{anchor:'cvg19',items:[{z:'                    if (paddr >= MEM_SIZE) begin',f:'../dut/apb_sram.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (paddr >= MEM_SIZE) begin',f:'../dut/apb_sram.sv',l:'75',h:'891',c:'g'}
+,{cr:'c',t:'T',z:'                    else if (pwrite) begin',f:'../dut/apb_sram.sv',l:'80',h:'1311',c:'g'}
+,{cr:'c',t:'E',z:'                    else begin',f:'../dut/apb_sram.sv',l:'84',h:'1218',c:'g'}
+]}],
+b8:[{dummy:0},
+{anchor:'cvg12',items:[{z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',h:'0',c:'r'}
+]}],
+b11:[{dummy:0},
+{anchor:'cvg12',items:[{z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(&#34;TB_TOP&#34;, &#34;Starting APB UVM Testbench&#34;, UVM_LOW)',f:'../tb/tb_top.sv',l:'48',h:'0',c:'r'}
+]}],
+b743:[{dummy:0},
+{anchor:'cvg744',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]}],
+b746:[{dummy:0},
+{anchor:'cvg747',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg748',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg749',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg750',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]}],
+b751:[{dummy:0},
+{anchor:'cvg752',items:[{z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',h:'0',c:'r'}
+]}],
+b753:[{dummy:0},
+{anchor:'cvg754',items:[{z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',h:'0',c:'r'}
+]}],
+b760:[{dummy:0},
+{anchor:'cvg761',items:[{z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg762',items:[{z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',h:'0',c:'r'}
+]}],
+b763:[{dummy:0},
+{anchor:'cvg764',items:[{z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',h:'0',c:'r'}
+]}],
+b766:[{dummy:0},
+{anchor:'cvg767',items:[{z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',h:'1656',c:'g'}
+,{cr:'c',t:'A',z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',h:'1470',c:'g'}
+]},
+{anchor:'cvg768',items:[{z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',h:'1470',c:'g'}
+,{cr:'c',t:'A',z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',h:'1656',c:'g'}
+]},
+{anchor:'cvg769',items:[{z:'        if (!b2b_mode) begin',f:'../env/apb_agent/apb_driver.sv',l:'97',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!b2b_mode) begin',f:'../env/apb_agent/apb_driver.sv',l:'97',h:'2919',c:'g'}
+,{cr:'c',t:'E',z:'        else begin ',f:'../env/apb_agent/apb_driver.sv',l:'103',h:'207',c:'g'}
+]}],
+b775:[{dummy:0},
+{anchor:'cvg776',items:[{z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg777',items:[{z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',h:'0',c:'r'}
+]}],
+b778:[{dummy:0},
+{anchor:'cvg779',items:[{z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',h:'0',c:'r'}
+]}],
+b780:[{dummy:0},
+{anchor:'cvg781',items:[{z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',h:'1656',c:'g'}
+,{cr:'c',t:'A',z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',h:'1470',c:'g'}
+]},
+{anchor:'cvg782',items:[{z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',h:'3126',c:'g'}
+]},
+{anchor:'cvg783',items:[{z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'3126',c:'g'}
+,{cr:'m',t:'A',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'0',c:'r'}
+]},
+{anchor:'cvg784',items:[{z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'1656',c:'g'}
+,{cr:'c',t:'E',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'1470',c:'g'}
+]}],
+b792:[{dummy:0},
+{anchor:'cvg793',items:[{z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg794',items:[{z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg795',items:[{z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',h:'0',c:'r'}
+]},
+{anchor:'cvg796',items:[{z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',h:'0',c:'r'}
+]}],
+b797:[{dummy:0},
+{anchor:'cvg798',items:[{z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',h:'0',c:'r'}
+]}],
+b799:[{dummy:0},
+{anchor:'cvg800',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'0',c:'r'}
+]},
+{anchor:'cvg801',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'0',c:'r'}
+]}],
+b807:[{dummy:0},
+{anchor:'cvg808',items:[{z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',h:'3126',c:'g'}
+]},
+{anchor:'cvg809',items:[{z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',h:'798',c:'g'}
+,{cr:'c',t:'A',z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',h:'2328',c:'g'}
+]},
+{anchor:'cvg810',items:[{z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',h:'798',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg811',items:[{z:'        if (tr.pwrite) begin ',f:'../env/apb_scoreboard.sv',l:'38',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite) begin ',f:'../env/apb_scoreboard.sv',l:'38',h:'1215',c:'g'}
+,{cr:'c',t:'E',z:'        end else begin ',f:'../env/apb_scoreboard.sv',l:'45',h:'1113',c:'g'}
+]},
+{anchor:'cvg812',items:[{z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',h:'1215',c:'g'}
+]},
+{anchor:'cvg813',items:[{z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',h:'600',c:'g'}
+,{cr:'c',t:'E',z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',h:'513',c:'g'}
+]},
+{anchor:'cvg814',items:[{z:'            if (tr.prdata === expected) begin',f:'../env/apb_scoreboard.sv',l:'50',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (tr.prdata === expected) begin',f:'../env/apb_scoreboard.sv',l:'50',h:'1113',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'../env/apb_scoreboard.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg815',items:[{z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',h:'1113',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',h:'0',c:'r'}
+]},
+{anchor:'cvg816',items:[{z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',h:'0',c:'r'}
+]}],
+b817:[{dummy:0},
+{anchor:'cvg818',items:[{z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',h:'0',c:'r'}
+]},
+{anchor:'cvg819',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',h:'0',c:'r'}
+]},
+{anchor:'cvg820',items:[{z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',h:'0',c:'r'}
+]},
+{anchor:'cvg821',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',h:'0',c:'r'}
+]},
+{anchor:'cvg822',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',h:'0',c:'r'}
+]},
+{anchor:'cvg823',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg824',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',h:'0',c:'r'}
+]},
+{anchor:'cvg825',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',h:'0',c:'r'}
+]},
+{anchor:'cvg826',items:[{z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg827',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg828',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',h:'0',c:'r'}
+]},
+{anchor:'cvg829',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',h:'0',c:'r'}
+]},
+{anchor:'cvg830',items:[{z:'        if (failed_transactions == 0)',f:'../env/apb_scoreboard.sv',l:'89',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (failed_transactions == 0)',f:'../env/apb_scoreboard.sv',l:'89',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        else',f:'../env/apb_scoreboard.sv',l:'91',h:'0',c:'r'}
+]},
+{anchor:'cvg831',items:[{z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',h:'0',c:'r'}
+]},
+{anchor:'cvg832',items:[{z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',h:'0',c:'r'}
+]},
+{anchor:'cvg833',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',h:'0',c:'r'}
+]}],
+b855:[{dummy:0},
+{anchor:'cvg856',items:[{z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',h:'3126',c:'g'}
+,{cr:'m',t:'A',z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',h:'0',c:'r'}
+]}],
+b857:[{dummy:0},
+{anchor:'cvg858',items:[{z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',h:'0',c:'r'}
+]},
+{anchor:'cvg859',items:[{z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg860',items:[{z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',h:'0',c:'r'}
+]}],
+b866:[{dummy:0},
+{anchor:'cvg867',items:[{z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',h:'0',c:'r'}
+]}],
+b868:[{dummy:0},
+{anchor:'cvg869',items:[{z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',h:'0',c:'r'}
+]}],
+b870:[{dummy:0},
+{anchor:'cvg871',items:[{z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',h:'0',c:'r'}
+]}],
+b876:[{dummy:0},
+{anchor:'cvg877',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b879:[{dummy:0},
+{anchor:'cvg880',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg881',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg882',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg883',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b884:[{dummy:0},
+{anchor:'cvg885',items:[{z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',h:'0',c:'r'}
+]}],
+b890:[{dummy:0},
+{anchor:'cvg891',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b893:[{dummy:0},
+{anchor:'cvg894',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg895',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg896',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg897',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b898:[{dummy:0},
+{anchor:'cvg899',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',h:'0',c:'r'}
+]},
+{anchor:'cvg900',items:[{z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg901',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg902',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',h:'384',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',h:'0',c:'r'}
+]},
+{anchor:'cvg903',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg904',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',h:'0',c:'r'}
+]},
+{anchor:'cvg905',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',h:'0',c:'r'}
+]}],
+b912:[{dummy:0},
+{anchor:'cvg913',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b915:[{dummy:0},
+{anchor:'cvg916',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg917',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg918',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg919',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b920:[{dummy:0},
+{anchor:'cvg921',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg922',items:[{z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg923',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',h:'0',c:'r'}
+]},
+{anchor:'cvg924',items:[{z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',h:'384',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg925',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg926',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg927',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',h:'0',c:'r'}
+]}],
+b934:[{dummy:0},
+{anchor:'cvg935',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b937:[{dummy:0},
+{anchor:'cvg938',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg939',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg940',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg941',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b942:[{dummy:0},
+{anchor:'cvg943',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg944',items:[{z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg945',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',h:'0',c:'r'}
+]},
+{anchor:'cvg946',items:[{z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',h:'48',c:'g'}
+,{cr:'m',t:'A',z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg947',items:[{z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',h:'48',c:'g'}
+,{cr:'m',t:'A',z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',h:'0',c:'r'}
+]},
+{anchor:'cvg948',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',h:'0',c:'r'}
+]},
+{anchor:'cvg949',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',h:'0',c:'r'}
+]},
+{anchor:'cvg950',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',h:'0',c:'r'}
+]}],
+b958:[{dummy:0},
+{anchor:'cvg959',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b961:[{dummy:0},
+{anchor:'cvg962',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg963',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg964',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg965',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b966:[{dummy:0},
+{anchor:'cvg967',items:[{z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',h:'3',c:'g'}
+]},
+{anchor:'cvg968',items:[{z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',h:'0',c:'r'}
+]}],
+b969:[{dummy:0},
+{anchor:'cvg970',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',h:'0',c:'r'}
+]},
+{anchor:'cvg971',items:[{z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',h:'0',c:'r'}
+]},
+{anchor:'cvg972',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',h:'0',c:'r'}
+]},
+{anchor:'cvg973',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg974',items:[{z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg975',items:[{z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',h:'0',c:'r'}
+]},
+{anchor:'cvg976',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg977',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg978',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg979',items:[{z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg980',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',h:'0',c:'r'}
+]}],
+b989:[{dummy:0},
+{anchor:'cvg990',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]}],
+b992:[{dummy:0},
+{anchor:'cvg993',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg994',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg995',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg996',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]}],
+b997:[{dummy:0},
+{anchor:'cvg998',items:[{z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',h:'3',c:'g'}
+]},
+{anchor:'cvg999',items:[{z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',h:'0',c:'r'}
+]}],
+b1000:[{dummy:0},
+{anchor:'cvg1001',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',h:'0',c:'r'}
+]},
+{anchor:'cvg1002',items:[{z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',h:'0',c:'r'}
+]},
+{anchor:'cvg1003',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',h:'0',c:'r'}
+]},
+{anchor:'cvg1004',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',h:'0',c:'r'}
+]},
+{anchor:'cvg1005',items:[{z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',h:'273',c:'g'}
+,{cr:'m',t:'A',z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',h:'0',c:'r'}
+]},
+{anchor:'cvg1006',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg1007',items:[{z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',h:'0',c:'r'}
+]},
+{anchor:'cvg1008',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',h:'0',c:'r'}
+]},
+{anchor:'cvg1009',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',h:'0',c:'r'}
+]}],
+b1016:[{dummy:0},
+{anchor:'cvg1017',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1019:[{dummy:0},
+{anchor:'cvg1020',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1021',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1022',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1023',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1024:[{dummy:0},
+{anchor:'cvg1025',items:[{z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg1026',items:[{z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',h:'0',c:'r'}
+]}],
+b1027:[{dummy:0},
+{anchor:'cvg1028',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg1029',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',h:'0',c:'r'}
+]},
+{anchor:'cvg1030',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg1031',items:[{z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',h:'0',c:'r'}
+]},
+{anchor:'cvg1032',items:[{z:'            if (tr.pwrite) begin',f:'../seq/apb_stress_seq.sv',l:'58',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (tr.pwrite) begin',f:'../seq/apb_stress_seq.sv',l:'58',h:'954',c:'g'}
+,{cr:'c',t:'E',z:'           end  else begin',f:'../seq/apb_stress_seq.sv',l:'62',h:'816',c:'g'}
+]},
+{anchor:'cvg1033',items:[{z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',h:'954',c:'g'}
+]},
+{anchor:'cvg1034',items:[{z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',h:'816',c:'g'}
+]},
+{anchor:'cvg1035',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',h:'0',c:'r'}
+]},
+{anchor:'cvg1036',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',h:'0',c:'r'}
+]},
+{anchor:'cvg1037',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',h:'0',c:'r'}
+]}],
+b1044:[{dummy:0},
+{anchor:'cvg1045',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1047:[{dummy:0},
+{anchor:'cvg1048',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1049',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1050',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1051',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1052:[{dummy:0},
+{anchor:'cvg1053',items:[{z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'3',c:'g'}
+]},
+{anchor:'cvg1054',items:[{z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+]}],
+b1055:[{dummy:0},
+{anchor:'cvg1056',items:[{z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg1057',items:[{z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',h:'0',c:'r'}
+]},
+{anchor:'cvg1058',items:[{z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',h:'3',c:'g'}
+]},
+{anchor:'cvg1059',items:[{z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',h:'0',c:'r'}
+]}],
+b1060:[{dummy:0},
+{anchor:'cvg1061',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg1062',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',h:'0',c:'r'}
+]},
+{anchor:'cvg1063',items:[{z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1064',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',h:'0',c:'r'}
+]},
+{anchor:'cvg1065',items:[{z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'49',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'49',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        end else begin',f:'../seq/apb_b2b_seq.sv',l:'52',h:'0',c:'r'}
+]},
+{anchor:'cvg1066',items:[{z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',h:'0',c:'r'}
+]},
+{anchor:'cvg1067',items:[{z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',h:'0',c:'r'}
+]},
+{anchor:'cvg1068',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',h:'0',c:'r'}
+]},
+{anchor:'cvg1069',items:[{z:'            if (tr.pwrite) begin',f:'../seq/apb_b2b_seq.sv',l:'66',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (tr.pwrite) begin',f:'../seq/apb_b2b_seq.sv',l:'66',h:'102',c:'g'}
+,{cr:'c',t:'E',z:'            end else begin',f:'../seq/apb_b2b_seq.sv',l:'70',h:'105',c:'g'}
+]},
+{anchor:'cvg1070',items:[{z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',h:'102',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1071',items:[{z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',h:'105',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',h:'0',c:'r'}
+]},
+{anchor:'cvg1072',items:[{z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',h:'0',c:'r'}
+]},
+{anchor:'cvg1073',items:[{z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',h:'0',c:'r'}
+]},
+{anchor:'cvg1074',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg1075',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg1076',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',h:'0',c:'r'}
+]}],
+b1084:[{dummy:0},
+{anchor:'cvg1085',items:[{z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',h:'0',c:'r'}
+]}],
+b1086:[{dummy:0},
+{anchor:'cvg1087',items:[{z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',h:'0',c:'r'}
+]},
+{anchor:'cvg1088',items:[{z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',h:'0',c:'r'}
+]}],
+b1089:[{dummy:0},
+{anchor:'cvg1090',items:[{z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',h:'0',c:'r'}
+]}],
+b1116:[{dummy:0},
+{anchor:'cvg1117',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]}],
+b1119:[{dummy:0},
+{anchor:'cvg1120',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1121',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1122',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1123',items:[{z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_transaction)',f:'../env/apb_agent/apb_transaction.sv',l:'18',h:'0',c:'r'}
+]}],
+b1124:[{dummy:0},
+{anchor:'cvg1125',items:[{z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'                      trans_id, seq_name, paddr, pwrite, pwrite?pwdata:pr...',f:'../env/apb_agent/apb_transaction.sv',l:'68',h:'0',c:'r'}
+]}],
+b1126:[{dummy:0},
+{anchor:'cvg1127',items:[{z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'        printer.print_field(&#34;DATA&#34;, pwrite?pwdata:prdata , 32, UVM_HEX);',f:'../env/apb_agent/apb_transaction.sv',l:'78',h:'0',c:'r'}
+]}],
+b1133:[{dummy:0},
+{anchor:'cvg1134',items:[{z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(this,&#34;&#34;,&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg1135',items:[{z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(&#34;DRV&#34;, &#34;Couldn\'t get APB interface from config DB&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'32',h:'0',c:'r'}
+]}],
+b1136:[{dummy:0},
+{anchor:'cvg1137',items:[{z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Driver started after reset released&#34;...',f:'../env/apb_agent/apb_driver.sv',l:'43',h:'0',c:'r'}
+]}],
+b1139:[{dummy:0},
+{anchor:'cvg1140',items:[{z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',h:'1656',c:'g'}
+,{cr:'c',t:'A',z:'        if (tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'75',h:'1470',c:'g'}
+]},
+{anchor:'cvg1141',items:[{z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',h:'1470',c:'g'}
+,{cr:'c',t:'A',z:'        if (!tr.pwrite) begin',f:'../env/apb_agent/apb_driver.sv',l:'91',h:'1656',c:'g'}
+]},
+{anchor:'cvg1142',items:[{z:'        if (!b2b_mode) begin',f:'../env/apb_agent/apb_driver.sv',l:'97',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!b2b_mode) begin',f:'../env/apb_agent/apb_driver.sv',l:'97',h:'2919',c:'g'}
+,{cr:'c',t:'E',z:'        else begin ',f:'../env/apb_agent/apb_driver.sv',l:'103',h:'207',c:'g'}
+]}],
+b1148:[{dummy:0},
+{anchor:'cvg1149',items:[{z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.monitor)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg1150',items:[{z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(&#34;MON&#34;, &#34;Could not get APB monitor interface!&#34;...',f:'../env/apb_agent/apb_monitor.sv',l:'32',h:'0',c:'r'}
+]}],
+b1151:[{dummy:0},
+{anchor:'cvg1152',items:[{z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Monitor started capturing after reset...',f:'../env/apb_agent/apb_monitor.sv',l:'39',h:'0',c:'r'}
+]}],
+b1153:[{dummy:0},
+{anchor:'cvg1154',items:[{z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',h:'1656',c:'g'}
+,{cr:'c',t:'A',z:'        if (trans.pwrite) begin',f:'../env/apb_agent/apb_monitor.sv',l:'65',h:'1470',c:'g'}
+]},
+{anchor:'cvg1155',items:[{z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'            UVM_HIGH);',f:'../env/apb_agent/apb_monitor.sv',l:'71',h:'3126',c:'g'}
+]},
+{anchor:'cvg1156',items:[{z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'3126',c:'g'}
+,{cr:'m',t:'A',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'0',c:'r'}
+]},
+{anchor:'cvg1157',items:[{z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'1656',c:'g'}
+,{cr:'c',t:'E',z:'            UVM_MEDIUM);',f:'../env/apb_agent/apb_monitor.sv',l:'94',h:'1470',c:'g'}
+]}],
+b1165:[{dummy:0},
+{anchor:'cvg1166',items:[{z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if(!uvm_config_db#(uvm_active_passive_enum)::get(this, &#34;&#34;, &#34;...',f:'../env/apb_agent/apb_agent.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg1167',items:[{z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(&#34;AGT&#34;, &#34;No is_active config, defaulting to UVM_ACTI...',f:'../env/apb_agent/apb_agent.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg1168',items:[{z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'50',h:'0',c:'r'}
+]},
+{anchor:'cvg1169',items:[{z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                                    `uvm_info(get_type_name(), &#34;Set drive...',f:'../env/apb_agent/apb_agent.sv',l:'56',h:'0',c:'r'}
+]}],
+b1170:[{dummy:0},
+{anchor:'cvg1171',items:[{z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (is_active == UVM_ACTIVE) begin ',f:'../env/apb_agent/apb_agent.sv',l:'65',h:'0',c:'r'}
+]}],
+b1172:[{dummy:0},
+{anchor:'cvg1173',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'0',c:'r'}
+]},
+{anchor:'cvg1174',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Agent Mode: %s&#34;, is_active ...',f:'../env/apb_agent/apb_agent.sv',l:'76',h:'0',c:'r'}
+]}],
+b1180:[{dummy:0},
+{anchor:'cvg1181',items:[{z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'        seq_info = (tr.seq_name != &#34;UNKNOWN_SEQ&#34;) ? $sformatf(&#34;...',f:'../env/apb_scoreboard.sv',l:'31',h:'3126',c:'g'}
+]},
+{anchor:'cvg1182',items:[{z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',h:'798',c:'g'}
+,{cr:'c',t:'A',z:'        if(tr.pslverr) begin',f:'../env/apb_scoreboard.sv',l:'33',h:'2328',c:'g'}
+]},
+{anchor:'cvg1183',items:[{z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',h:'798',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_warning(get_type_name(), $sformatf(&#34;T#%0d [SLVERR] ADDR=...',f:'../env/apb_scoreboard.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1184',items:[{z:'        if (tr.pwrite) begin ',f:'../env/apb_scoreboard.sv',l:'38',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite) begin ',f:'../env/apb_scoreboard.sv',l:'38',h:'1215',c:'g'}
+,{cr:'c',t:'E',z:'        end else begin ',f:'../env/apb_scoreboard.sv',l:'45',h:'1113',c:'g'}
+]},
+{anchor:'cvg1185',items:[{z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                          tr.trans_id, tr.paddr, tr.pwdata), UVM_HIGH);',f:'../env/apb_scoreboard.sv',l:'44',h:'1215',c:'g'}
+]},
+{anchor:'cvg1186',items:[{z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',h:'600',c:'g'}
+,{cr:'c',t:'E',z:'            expected = mem_model.exists(tr.paddr) ? mem_model[tr.paddr] :...',f:'../env/apb_scoreboard.sv',l:'48',h:'513',c:'g'}
+]},
+{anchor:'cvg1187',items:[{z:'            if (tr.prdata === expected) begin',f:'../env/apb_scoreboard.sv',l:'50',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (tr.prdata === expected) begin',f:'../env/apb_scoreboard.sv',l:'50',h:'1113',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'../env/apb_scoreboard.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg1188',items:[{z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',h:'1113',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.trans_id, tr.paddr, tr.prdata), UVM_MEDI...',f:'../env/apb_scoreboard.sv',l:'54',h:'0',c:'r'}
+]},
+{anchor:'cvg1189',items:[{z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'                              tr.trans_id, tr.paddr, expected, tr.prdata)...',f:'../env/apb_scoreboard.sv',l:'59',h:'0',c:'r'}
+]}],
+b1190:[{dummy:0},
+{anchor:'cvg1191',items:[{z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;\\n&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'73',h:'0',c:'r'}
+]},
+{anchor:'cvg1192',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'74',h:'0',c:'r'}
+]},
+{anchor:'cvg1193',items:[{z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;                    SCOREBOARD FINAL ...',f:'../env/apb_scoreboard.sv',l:'75',h:'0',c:'r'}
+]},
+{anchor:'cvg1194',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'76',h:'0',c:'r'}
+]},
+{anchor:'cvg1195',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Total Transactions   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'78',h:'0',c:'r'}
+]},
+{anchor:'cvg1196',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Write            : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg1197',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Read             : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'80',h:'0',c:'r'}
+]},
+{anchor:'cvg1198',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;  - Error (SLVERR)   : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'81',h:'0',c:'r'}
+]},
+{anchor:'cvg1199',items:[{z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;&#34;, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg1200',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;PASSED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg1201',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;FAILED               : %0d&#34;...',f:'../env/apb_scoreboard.sv',l:'85',h:'0',c:'r'}
+]},
+{anchor:'cvg1202',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'87',h:'0',c:'r'}
+]},
+{anchor:'cvg1203',items:[{z:'        if (failed_transactions == 0)',f:'../env/apb_scoreboard.sv',l:'89',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (failed_transactions == 0)',f:'../env/apb_scoreboard.sv',l:'89',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        else',f:'../env/apb_scoreboard.sv',l:'91',h:'0',c:'r'}
+]},
+{anchor:'cvg1204',items:[{z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34;                  *** TEST PASSED...',f:'../env/apb_scoreboard.sv',l:'90',h:'0',c:'r'}
+]},
+{anchor:'cvg1205',items:[{z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_error(get_type_name(), &#34;                  *** TEST FAILE...',f:'../env/apb_scoreboard.sv',l:'92',h:'0',c:'r'}
+]},
+{anchor:'cvg1206',items:[{z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), line, UVM_NONE);',f:'../env/apb_scoreboard.sv',l:'94',h:'0',c:'r'}
+]}],
+b1228:[{dummy:0},
+{anchor:'cvg1229',items:[{z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',h:'3126',c:'g'}
+,{cr:'m',t:'A',z:'        if (tr != null) begin',f:'../coverage/apb_coverage.sv',l:'64',h:'0',c:'r'}
+]}],
+b1230:[{dummy:0},
+{anchor:'cvg1231',items:[{z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                      cg_apb.get_inst_coverage()), UVM_NONE);',f:'../coverage/apb_coverage.sv',l:'77',h:'0',c:'r'}
+]},
+{anchor:'cvg1232',items:[{z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg1233',items:[{z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== END DETAILED COVERAGE REPORT ===&#34;...',f:'../coverage/apb_coverage.sv',l:'96',h:'0',c:'r'}
+]}],
+b1239:[{dummy:0},
+{anchor:'cvg1240',items:[{z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM)',f:'../env/apb_env.sv',l:'26',h:'0',c:'r'}
+]}],
+b1241:[{dummy:0},
+{anchor:'cvg1242',items:[{z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Connect phase completed - Monitor con...',f:'../env/apb_env.sv',l:'35',h:'0',c:'r'}
+]}],
+b1243:[{dummy:0},
+{anchor:'cvg1244',items:[{z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Environment report phase completed&#34;...',f:'../env/apb_env.sv',l:'40',h:'0',c:'r'}
+]}],
+b1249:[{dummy:0},
+{anchor:'cvg1250',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1252:[{dummy:0},
+{anchor:'cvg1253',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1254',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1255',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1256',items:[{z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_base_seq)',f:'../seq/apb_base_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1257:[{dummy:0},
+{anchor:'cvg1258',items:[{z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Base sequence body started&#34;, UVM_MEDI...',f:'../seq/apb_base_seq.sv',l:'27',h:'0',c:'r'}
+]}],
+b1263:[{dummy:0},
+{anchor:'cvg1264',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1266:[{dummy:0},
+{anchor:'cvg1267',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1268',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1269',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1270',items:[{z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_write_seq)',f:'../seq/apb_write_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1271:[{dummy:0},
+{anchor:'cvg1272',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'28',h:'0',c:'r'}
+]},
+{anchor:'cvg1273',items:[{z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           START APB_05: WRIT...',f:'../seq/apb_write_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg1274',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg1275',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',h:'384',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;TASK WRITE: Sent Write: ADD...',f:'../seq/apb_write_seq.sv',l:'38',h:'0',c:'r'}
+]},
+{anchor:'cvg1276',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_write_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg1277',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_05:WR...',f:'../seq/apb_write_seq.sv',l:'41',h:'0',c:'r'}
+]},
+{anchor:'cvg1278',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_write_seq.sv',l:'42',h:'0',c:'r'}
+]}],
+b1285:[{dummy:0},
+{anchor:'cvg1286',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b1288:[{dummy:0},
+{anchor:'cvg1289',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1290',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1291',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1292',items:[{z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_read_seq)',f:'../seq/apb_read_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b1293:[{dummy:0},
+{anchor:'cvg1294',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg1295',items:[{z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           START APB_06: READ...',f:'../seq/apb_read_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg1296',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'31',h:'0',c:'r'}
+]},
+{anchor:'cvg1297',items:[{z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',h:'384',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), $sformatf(&#34;TASK READ DATA : Sent R...',f:'../seq/apb_read_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg1298',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_read_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg1299',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_O6: R...',f:'../seq/apb_read_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg1300',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_read_seq.sv',l:'44',h:'0',c:'r'}
+]}],
+b1307:[{dummy:0},
+{anchor:'cvg1308',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b1310:[{dummy:0},
+{anchor:'cvg1311',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1312',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1313',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]},
+{anchor:'cvg1314',items:[{z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_wr_rd_seq)',f:'../seq/apb_wr_rd_seq.sv',l:'19',h:'0',c:'r'}
+]}],
+b1315:[{dummy:0},
+{anchor:'cvg1316',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'29',h:'0',c:'r'}
+]},
+{anchor:'cvg1317',items:[{z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;          START APB_04: WRITE...',f:'../seq/apb_wr_rd_seq.sv',l:'30',h:'0',c:'r'}
+]},
+{anchor:'cvg1318',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'31',h:'0',c:'r'}
+]},
+{anchor:'cvg1319',items:[{z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',h:'48',c:'g'}
+,{cr:'m',t:'A',z:'                      wr_trans.paddr, wr_trans.pwdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg1320',items:[{z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',h:'48',c:'g'}
+,{cr:'m',t:'A',z:'                      rd_trans.paddr, rd_trans.prdata), UVM_MEDIUM)',f:'../seq/apb_wr_rd_seq.sv',l:'58',h:'0',c:'r'}
+]},
+{anchor:'cvg1321',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_wr_rd_seq.sv',l:'60',h:'0',c:'r'}
+]},
+{anchor:'cvg1322',items:[{z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                `uvm_info(get_type_name(), &#34;           COMPLETE APB_04: W...',f:'../seq/apb_wr_rd_seq.sv',l:'61',h:'0',c:'r'}
+]},
+{anchor:'cvg1323',items:[{z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'                        `uvm_info(get_type_name(), &#34;=====================...',f:'../seq/apb_wr_rd_seq.sv',l:'62',h:'0',c:'r'}
+]}],
+b1331:[{dummy:0},
+{anchor:'cvg1332',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1334:[{dummy:0},
+{anchor:'cvg1335',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1336',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1337',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1338',items:[{z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_reset_seq)',f:'../seq/apb_reset_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1339:[{dummy:0},
+{anchor:'cvg1340',items:[{z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!uvm_config_db#(virtual apb_if.driver)::get(null, &#34;&#34;, &#34;...',f:'../seq/apb_reset_seq.sv',l:'27',h:'3',c:'g'}
+]},
+{anchor:'cvg1341',items:[{z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(get_type_name(), &#34;Failed to get virtual interface ...',f:'../seq/apb_reset_seq.sv',l:'28',h:'0',c:'r'}
+]}],
+b1342:[{dummy:0},
+{anchor:'cvg1343',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'36',h:'0',c:'r'}
+]},
+{anchor:'cvg1344',items:[{z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           START APB_01: RESET SEQUEN...',f:'../seq/apb_reset_seq.sv',l:'37',h:'0',c:'r'}
+]},
+{anchor:'cvg1345',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'38',h:'0',c:'r'}
+]},
+{anchor:'cvg1346',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;Asserting presetn = 0 for %...',f:'../seq/apb_reset_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg1347',items:[{z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Deasserted reset. Waiting for DUT to ...',f:'../seq/apb_reset_seq.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg1348',items:[{z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Sending 2 write + 2 read transactions...',f:'../seq/apb_reset_seq.sv',l:'62',h:'0',c:'r'}
+]},
+{anchor:'cvg1349',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for WRITE ...',f:'../seq/apb_reset_seq.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1350',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed for READ t...',f:'../seq/apb_reset_seq.sv',l:'79',h:'0',c:'r'}
+]},
+{anchor:'cvg1351',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg1352',items:[{z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           COMPLETE APB_01: RESET SEQ...',f:'../seq/apb_reset_seq.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg1353',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_reset_seq.sv',l:'85',h:'0',c:'r'}
+]}],
+b1362:[{dummy:0},
+{anchor:'cvg1363',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]}],
+b1365:[{dummy:0},
+{anchor:'cvg1366',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg1367',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg1368',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]},
+{anchor:'cvg1369',items:[{z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_illegal_addr_seq)',f:'../seq/apb_illegal_addr_seq.sv',l:'11',h:'0',c:'r'}
+]}],
+b1370:[{dummy:0},
+{anchor:'cvg1371',items:[{z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if (!randomize()) begin',f:'../seq/apb_illegal_addr_seq.sv',l:'24',h:'3',c:'g'}
+]},
+{anchor:'cvg1372',items:[{z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_error(get_type_name(), &#34;Randomize num_tx failed!&#34;);',f:'../seq/apb_illegal_addr_seq.sv',l:'25',h:'0',c:'r'}
+]}],
+b1373:[{dummy:0},
+{anchor:'cvg1374',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'32',h:'0',c:'r'}
+]},
+{anchor:'cvg1375',items:[{z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           START ILLEGAL ADDRESS SEQU...',f:'../seq/apb_illegal_addr_seq.sv',l:'33',h:'0',c:'r'}
+]},
+{anchor:'cvg1376',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'34',h:'0',c:'r'}
+]},
+{anchor:'cvg1377',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize illegal transacti...',f:'../seq/apb_illegal_addr_seq.sv',l:'44',h:'0',c:'r'}
+]},
+{anchor:'cvg1378',items:[{z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',h:'273',c:'g'}
+,{cr:'m',t:'A',z:'                UVM_LOW);',f:'../seq/apb_illegal_addr_seq.sv',l:'52',h:'0',c:'r'}
+]},
+{anchor:'cvg1379',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'55',h:'0',c:'r'}
+]},
+{anchor:'cvg1380',items:[{z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           ILLEGAL ADDRESS SEQUENCE C...',f:'../seq/apb_illegal_addr_seq.sv',l:'56',h:'0',c:'r'}
+]},
+{anchor:'cvg1381',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           Total illegal tr...',f:'../seq/apb_illegal_addr_seq.sv',l:'57',h:'0',c:'r'}
+]},
+{anchor:'cvg1382',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_illegal_addr_seq.sv',l:'58',h:'0',c:'r'}
+]}],
+b1389:[{dummy:0},
+{anchor:'cvg1390',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1392:[{dummy:0},
+{anchor:'cvg1393',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1394',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1395',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1396',items:[{z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_stress_seq)',f:'../seq/apb_stress_seq.sv',l:'18',h:'0',c:'r'}
+]}],
+b1397:[{dummy:0},
+{anchor:'cvg1398',items:[{z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'      if(!randomize()) begin',f:'../seq/apb_stress_seq.sv',l:'31',h:'3',c:'g'}
+]},
+{anchor:'cvg1399',items:[{z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_stress_seq.sv',l:'32',h:'0',c:'r'}
+]}],
+b1400:[{dummy:0},
+{anchor:'cvg1401',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'40',h:'0',c:'r'}
+]},
+{anchor:'cvg1402',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START APB_12:  S...',f:'../seq/apb_stress_seq.sv',l:'41',h:'0',c:'r'}
+]},
+{anchor:'cvg1403',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'42',h:'0',c:'r'}
+]},
+{anchor:'cvg1404',items:[{z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34; Randomize fail in stress s...',f:'../seq/apb_stress_seq.sv',l:'51',h:'0',c:'r'}
+]},
+{anchor:'cvg1405',items:[{z:'            if (tr.pwrite) begin',f:'../seq/apb_stress_seq.sv',l:'58',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (tr.pwrite) begin',f:'../seq/apb_stress_seq.sv',l:'58',h:'954',c:'g'}
+,{cr:'c',t:'E',z:'           end  else begin',f:'../seq/apb_stress_seq.sv',l:'62',h:'816',c:'g'}
+]},
+{anchor:'cvg1406',items:[{z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_H...',f:'../seq/apb_stress_seq.sv',l:'61',h:'954',c:'g'}
+]},
+{anchor:'cvg1407',items:[{z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'                              tr.paddr, tr.wait_cycles), UVM_HIGH);',f:'../seq/apb_stress_seq.sv',l:'65',h:'816',c:'g'}
+]},
+{anchor:'cvg1408',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'70',h:'0',c:'r'}
+]},
+{anchor:'cvg1409',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           COMPLETED: APB_1...',f:'../seq/apb_stress_seq.sv',l:'71',h:'0',c:'r'}
+]},
+{anchor:'cvg1410',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_stress_seq.sv',l:'72',h:'0',c:'r'}
+]}],
+b1417:[{dummy:0},
+{anchor:'cvg1418',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1420:[{dummy:0},
+{anchor:'cvg1421',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1422',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1423',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]},
+{anchor:'cvg1424',items:[{z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_object_utils(apb_b2b_seq)',f:'../seq/apb_b2b_seq.sv',l:'12',h:'0',c:'r'}
+]}],
+b1425:[{dummy:0},
+{anchor:'cvg1426',items:[{z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'3',c:'g'}
+]},
+{anchor:'cvg1427',items:[{z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_declare_p_sequencer(uvm_sequencer#(apb_transaction))',f:'../seq/apb_b2b_seq.sv',l:'15',h:'0',c:'r'}
+]}],
+b1428:[{dummy:0},
+{anchor:'cvg1429',items:[{z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if (!uvm_config_db#(apb_driver)::get(m_sequencer, &#34;&#34;, &#34;...',f:'../seq/apb_b2b_seq.sv',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg1430',items:[{z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_fatal(get_type_name(), &#34;Cannot get driver from config_db...',f:'../seq/apb_b2b_seq.sv',l:'33',h:'0',c:'r'}
+]},
+{anchor:'cvg1431',items:[{z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'        if(!randomize()) begin',f:'../seq/apb_b2b_seq.sv',l:'35',h:'3',c:'g'}
+]},
+{anchor:'cvg1432',items:[{z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'          `uvm_error(get_type_name(),&#34;Randomize num_tx fail in stress seq...',f:'../seq/apb_b2b_seq.sv',l:'36',h:'0',c:'r'}
+]}],
+b1433:[{dummy:0},
+{anchor:'cvg1434',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'43',h:'0',c:'r'}
+]},
+{anchor:'cvg1435',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           START TRUE BACK-...',f:'../seq/apb_b2b_seq.sv',l:'44',h:'0',c:'r'}
+]},
+{anchor:'cvg1436',items:[{z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;           (No idle cycle between tra...',f:'../seq/apb_b2b_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1437',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'46',h:'0',c:'r'}
+]},
+{anchor:'cvg1438',items:[{z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'49',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'49',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'        end else begin',f:'../seq/apb_b2b_seq.sv',l:'52',h:'0',c:'r'}
+]},
+{anchor:'cvg1439',items:[{z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34; B2B mode ENABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'51',h:'0',c:'r'}
+]},
+{anchor:'cvg1440',items:[{z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            `uvm_warning(get_type_name(), &#34;Driver is null, cannot enable ...',f:'../seq/apb_b2b_seq.sv',l:'53',h:'0',c:'r'}
+]},
+{anchor:'cvg1441',items:[{z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'            else `uvm_error(get_type_name(), &#34;Randomize failed in B2B seq...',f:'../seq/apb_b2b_seq.sv',l:'61',h:'0',c:'r'}
+]},
+{anchor:'cvg1442',items:[{z:'            if (tr.pwrite) begin',f:'../seq/apb_b2b_seq.sv',l:'66',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (tr.pwrite) begin',f:'../seq/apb_b2b_seq.sv',l:'66',h:'102',c:'g'}
+,{cr:'c',t:'E',z:'            end else begin',f:'../seq/apb_b2b_seq.sv',l:'70',h:'105',c:'g'}
+]},
+{anchor:'cvg1443',items:[{z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',h:'102',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.paddr, tr.pwdata, tr.wait_cycles), UVM_L...',f:'../seq/apb_b2b_seq.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1444',items:[{z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',h:'105',c:'g'}
+,{cr:'m',t:'A',z:'                              tr.paddr, tr.wait_cycles), UVM_LOW);',f:'../seq/apb_b2b_seq.sv',l:'73',h:'0',c:'r'}
+]},
+{anchor:'cvg1445',items:[{z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        if (drv != null) begin',f:'../seq/apb_b2b_seq.sv',l:'78',h:'0',c:'r'}
+]},
+{anchor:'cvg1446',items:[{z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'            `uvm_info(get_type_name(), &#34; B2B mode DISABLED in driver&#34;...',f:'../seq/apb_b2b_seq.sv',l:'80',h:'0',c:'r'}
+]},
+{anchor:'cvg1447',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'83',h:'0',c:'r'}
+]},
+{anchor:'cvg1448',items:[{z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), $sformatf(&#34;           BACK-TO-BACK SEQ...',f:'../seq/apb_b2b_seq.sv',l:'84',h:'0',c:'r'}
+]},
+{anchor:'cvg1449',items:[{z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=====================================...',f:'../seq/apb_b2b_seq.sv',l:'85',h:'0',c:'r'}
+]}],
+b1457:[{dummy:0},
+{anchor:'cvg1458',items:[{z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;Build phase completed&#34;, UVM_MEDIUM);',f:'../test/apb_base_test.sv',l:'26',h:'0',c:'r'}
+]}],
+b1459:[{dummy:0},
+{anchor:'cvg1460',items:[{z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;============== START FULL APB TEST ==...',f:'../test/apb_base_test.sv',l:'34',h:'0',c:'r'}
+]},
+{anchor:'cvg1461',items:[{z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;=== All sequences completed ===&#34;...',f:'../test/apb_base_test.sv',l:'62',h:'0',c:'r'}
+]}],
+b1462:[{dummy:0},
+{anchor:'cvg1463',items:[{z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'        `uvm_info(get_type_name(), &#34;APB Base Test completed&#34;, UVM_LOW);',f:'../test/apb_base_test.sv',l:'69',h:'0',c:'r'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);
