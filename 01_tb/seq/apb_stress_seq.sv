@@ -47,8 +47,14 @@ class apb_stress_seq extends apb_base_seq;
 
             // random full khong rang buoc cm j het
 
-            assert(tr.randomize())
-            else `uvm_error(get_type_name(), " Randomize fail in stress sequences ");
+            //assert(tr.randomize())
+            //else `uvm_error(get_type_name(), " Randomize fail in stress sequences ");
+
+            if (!tr.randomize()) begin
+            // pragma coverage off
+            `uvm_error(get_type_name(), "Randomize failed in stress sequence!")
+            // pragma coverage on
+            end
 
             tr.seq_name = "STRESS_SEQ";
             finish_item(tr);

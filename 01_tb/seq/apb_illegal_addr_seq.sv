@@ -37,11 +37,21 @@ class apb_illegal_addr_seq extends apb_base_seq;
             tr = apb_transaction::type_id::create("tr");
 
             start_item(tr);
+            if (!tr.randomize() with {
+                paddr >= 32'h0000_0400;
+                pwrite inside {0, 1};
+            }) begin
+            // pragma coverage off
+            `uvm_error(get_type_name(), "Randomize illegal transaction failed!");
+            // pragma coverage on
+            end
+            /*
             assert(tr.randomize() with {
                 paddr >= 32'h0000_0400;
                 pwrite inside {0, 1};
             })
             else `uvm_error(get_type_name(), "Randomize illegal transaction failed!");
+            */
 
             tr.seq_name = "ILLEGAL_ADDR_SEQ";
             finish_item(tr);

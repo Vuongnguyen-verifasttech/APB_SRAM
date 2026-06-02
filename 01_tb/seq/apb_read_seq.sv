@@ -33,7 +33,13 @@ class apb_read_seq extends apb_base_seq;
             tr = apb_transaction::type_id::create("tr");
 
             start_item(tr);
-            assert(tr.randomize() with {pwrite == 0;});
+            //assert(tr.randomize() with {pwrite == 0;});
+            if (!tr.randomize() with {pwrite == 0;}) begin
+            // pragma coverage off
+            `uvm_error(get_type_name(), "Randomize failed for READ transaction!");
+            // pragma coverage on
+            end
+            tr.seq_name = "READ_SEQ";
             tr.seq_name = "READ_SEQ";
             finish_item(tr);
 

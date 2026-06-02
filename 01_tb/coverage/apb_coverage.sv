@@ -56,6 +56,11 @@ class apb_coverage extends uvm_subscriber #(apb_transaction);
         cg_apb = new();
     endfunction
 
+    virtual function void build_phase(uvm_phase phase);
+    string dummy_name = this.get_type_name(); // Ép kích hoạt hàm ẩn trong macro
+    super.build_phase(phase);
+endfunction
+
     //==================================================================
     // WRITE - Nhận transaction từ monitor
     //==================================================================

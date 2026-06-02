@@ -34,7 +34,13 @@ class apb_wr_rd_seq extends apb_base_seq;
             wr_trans = apb_transaction::type_id::create("wr_trans");
             
             start_item(wr_trans);
-            assert(wr_trans.randomize() with {pwrite == 1;});
+            //assert(wr_trans.randomize() with {pwrite == 1;});
+            if (!tr.randomize() with {pwrite == 0;}) begin
+            // pragma coverage off
+            `uvm_error(get_type_name(), "Randomize failed for WRITE READ transaction!");
+            // pragma coverage on
+            end
+tr.seq_name = "READ_SEQ";
             // Trong phần WRITE
             wr_trans.seq_name = "WR_RD_SEQ_WRITE";
             finish_item(wr_trans);

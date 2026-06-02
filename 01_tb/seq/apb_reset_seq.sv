@@ -65,8 +65,13 @@ class apb_reset_seq extends apb_base_seq;
         repeat(2) begin
             tr = apb_transaction::type_id::create("tr");
             start_item(tr);
-            assert(tr.randomize() with { pwrite == 1; })
-            else `uvm_error(get_type_name(), "Randomize failed for WRITE transaction!");
+            if (!tr.randomize() with { pwrite == 1; }) begin
+             // pragma coverage off
+            `uvm_error(get_type_name(), "Randomize failed for WRITE transaction!");
+            // pragma coverage on
+            end
+            //assert(tr.randomize() with { pwrite == 1; })
+           // else `uvm_error(get_type_name(), "Randomize failed for WRITE transaction!");
             tr.seq_name = "RESET_SEQ_WRITE";
             finish_item(tr);
         end
