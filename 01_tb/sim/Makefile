@@ -53,13 +53,16 @@ compile:
 # Chạy 1 simulation đơn lẻ (Dùng để debug nhanh hoặc chạy chỉ 1 test cụ thể)
 # Ví dụ: make sim TEST_NAME=apb_stress_test
 # ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# Chạy 1 simulation đơn lẻ: Show log trực tiếp ra Terminal + Vẫn lưu vào file
+# ------------------------------------------------------------------------------
 sim:
 	@mkdir -p single_run_logs
 	vsim -c $(COV_SIM) \
 		$(TOP_MODULE) \
 		+UVM_TESTNAME=$(TEST_NAME) \
 		-do "run -all; coverage save -onexit $(TEST_NAME).ucdb; quit -f" \
-		> single_run_logs/$(TEST_NAME).log 2>&1
+		| tee single_run_logs/$(TEST_NAME).log
 
 # ------------------------------------------------------------------------------
 # TARGET REGRESSION CHUYÊN NGHIỆP: Vòng lặp lồng lặp (Quét Testlist x Quét Seeds)
