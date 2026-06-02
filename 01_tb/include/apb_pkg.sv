@@ -28,8 +28,16 @@ package apb_pkg;
     `include "apb_stress_seq.sv"
     `include "apb_b2b_seq.sv"
 
-    // 5. Test
+    
+    // 5. Test (Bao gồm Base Test cha và hệ thống các kịch bản test con kế thừa)
     `include "apb_base_test.sv"
+    `include "apb_write_test.sv"
+    `include "apb_read_test.sv"
+    `include "apb_wr_rd_test.sv"
+    `include "apb_reset_test.sv"
+    `include "apb_illegal_addr_test.sv"
+    `include "apb_stress_test.sv"
+    `include "apb_b2b_test.sv"
 
 endpackage : apb_pkg
 
