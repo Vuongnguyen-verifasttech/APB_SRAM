@@ -1,6 +1,6 @@
 `ifndef APB_WR_RD_TEST_SV
 `define APB_WR_RD_TEST_SV
-
+// Test nay dg co van de o dau test, phan sau thi okla: fix after
 class apb_wr_rd_test extends apb_base_test;
     `uvm_component_utils(apb_wr_rd_test)
 
