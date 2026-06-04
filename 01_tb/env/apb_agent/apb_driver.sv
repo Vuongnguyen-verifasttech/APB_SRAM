@@ -86,12 +86,14 @@ class apb_driver extends uvm_driver #(apb_transaction);
 
         // Wait until slave asserts pready at a clock edge
         // Use a safe loop that samples only on the clocking block boundary
- // ACCESS PHASE
+ /// ACCESS PHASE
 vif.drv_cb.psel    <= 1;
 vif.drv_cb.penable <= 1;
-@(vif.drv_cb);  // ← advance 1 cycle để penable có hiệu lực
 
-// Giờ mới check pready
+// vào ACCESS
+@(vif.drv_cb);
+
+// polling pready
 while (vif.drv_cb.pready !== 1'b1) begin
     @(vif.drv_cb);
 end
