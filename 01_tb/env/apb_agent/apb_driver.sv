@@ -3,9 +3,9 @@
 // Author        : [vnguyen]
 // Company       : [Verifast]
 // Project       : APB Verification Environment
-// Description   : APB Driver definition
+// Description   : APB Driver definition - Fixed setup phase & pready synchronization
 //                 - Handles driving APB transactions to the DUT with B2B support
-// Version       : 1.2
+// Version       : 1.3
 // Date          : 22-May-2026
 //==============================================================================
 
@@ -40,7 +40,11 @@ class apb_driver extends uvm_driver #(apb_transaction);
         
         // Chờ cho đến khi hệ thống nhả Reset (presetn tích cực mức cao)
         wait(vif.presetn === 1'b1);
-        `uvm_info(get_type_name(), "Driver started after reset released", UVM_MEDIUM);
+        
+        // 🌟 SỬA LỖI 1: Đồng bộ với cạnh Clock của Clocking Block ngay sau khi nhả reset.
+        // Việc này giúp Driver không bị lệch pha bất đồng bộ ở Transaction đầu tiên.
+        @(vif.drv_cb); 
+        `uvm_info(get_type_name(), "Driver started after reset released and clock synchronized", UVM_MEDIUM);
         
         forever begin 
             // Lấy transaction tiếp theo từ sequencer
@@ -80,12 +84,17 @@ class apb_driver extends uvm_driver #(apb_transaction);
         @(vif.drv_cb); 
 
         // ======== 2. ACCESS PHASE =============
+        // Kéo penable lên 1 ở chu kỳ kế tiếp theo đúng spec APB
         vif.drv_cb.penable <= 1;
         
-        // Vòng lặp chờ phản hồi sẵn sàng từ DUT (pready == 1)
-        do begin
+        // 🌟 SỬA LỖI 2: Thay thế vòng lặp do...while bằng cấu trúc kiểm tra linh hoạt hơn.
+        // Đảm bảo penable hạ ngay chu kỳ sau nếu pready=1, không bị kéo dài dư thừa.
+        forever begin
             @(vif.drv_cb);
-        end while (!vif.drv_cb.pready);
+            if (vif.drv_cb.pready == 1'b1) begin
+                break; // Thoát vòng lặp ngay khi Slave sẵn sàng phản hồi
+            end
+        end
 
         // Thu thập dữ liệu phản hồi từ phía Slave nếu đây là lệnh READ
         if (!tr.pwrite) begin
