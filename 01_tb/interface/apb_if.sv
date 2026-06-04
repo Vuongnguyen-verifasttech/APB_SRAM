@@ -33,7 +33,7 @@ interface apb_if #(
 // Driver phải tạo stimulus (chủ động drive bus), nên cần khai báo output cho các signal nó drive
 // Driver cũng cần nhận phản hồi từ Slave (pready, prdata, pslverr) để biết khi nào transaction kết thúc → phải có input.
    clocking drv_cb @(posedge pclk);
-    default input #1step output #1step;   // fix race condition
+    default input #1step ;   // fix race condition
     output  psel, penable, pwrite, paddr, pwdata, presetn;  // bỏ presetn
     input   prdata, pready, pslverr;
 endclocking : drv_cb
