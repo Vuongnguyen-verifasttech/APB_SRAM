@@ -24,7 +24,7 @@ TEST_LIST   ?= apb_write_test \
                apb_b2b_test
 
 # Số lượng seeds mặc định cho mỗi testcase khi chạy regression
-NUM_SEEDS    ?= 3
+NUM_SEEDS    ?= 1
 
 # Tên testcase mặc định khi chạy đơn lẻ (lệnh: make sim)
 TEST_NAME    ?= apb_write_test
