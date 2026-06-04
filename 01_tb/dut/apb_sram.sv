@@ -1,4 +1,44 @@
-always_ff @(posedge pclk or negedge presetn) begin
+`timescale 1ns/1ps
+
+module apb_sram #(
+    parameter int ADDR_WIDTH = 32,
+    parameter int DATA_WIDTH = 32,
+    parameter int MEM_DEPTH  = 10,
+    parameter int MAX_WAIT   = 8
+) (
+    input  logic                  pclk,
+    input  logic                  presetn,
+    input  logic                  psel,
+    input  logic                  penable,
+    input  logic                  pwrite,
+    input  logic [ADDR_WIDTH-1:0] paddr,
+    input  logic [DATA_WIDTH-1:0] pwdata,
+    output logic [DATA_WIDTH-1:0] prdata,
+    output logic                  pready,
+    output logic                  pslverr
+);
+
+    localparam int MEM_SIZE = 1 << MEM_DEPTH;
+
+    typedef enum logic [1:0] {
+        IDLE        = 2'b00,
+        SETUP       = 2'b01,
+        ACCESS_WAIT = 2'b10
+    } apb_state_e;
+
+    logic [DATA_WIDTH-1:0] mem [0:MEM_SIZE-1];
+
+    logic [ADDR_WIDTH-1:0] latched_addr;
+    logic [DATA_WIDTH-1:0] latched_wdata;
+    logic                  latched_pwrite;
+
+    // Sửa thành logic thông thường, cập nhật qua Non-blocking (<=)
+    logic [7:0] wait_cycles;
+    logic [7:0] wait_cnt;
+
+    apb_state_e state;
+
+    always_ff @(posedge pclk or negedge presetn) begin
         if (!presetn) begin
             state          <= IDLE;
             wait_cycles    <= '0;
@@ -84,3 +124,18 @@ always_ff @(posedge pclk or negedge presetn) begin
             endcase
         end
     end
+
+    // Task giữ nguyên logic gán tuần tự bên trong khối always_ff
+    task automatic do_mem_op();
+        if (latched_addr >= ADDR_WIDTH'(MEM_SIZE)) begin
+            pslverr <= 1'b1;
+            prdata  <= DATA_WIDTH'('hDEAD_BEEF);
+        end else if (latched_pwrite) begin
+            mem[latched_addr[MEM_DEPTH-1:0]] <= latched_wdata;
+        end else begin
+            prdata  <= mem[latched_addr[MEM_DEPTH-1:0]];
+            pslverr <= 1'b0;
+        end
+    endtask
+
+endmodule
