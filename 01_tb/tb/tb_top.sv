@@ -47,7 +47,7 @@ module tb_top;
 
         `uvm_info("TB_TOP", "Starting APB UVM Testbench", UVM_LOW)
         //$dumpvars(0,tb_top);
-        run_test("apb_base_test");   // Chạy test mặc định
+        run_test();   // Dùng +UVM_TESTNAME từ command line / Makefile
     end
 
 endmodule
