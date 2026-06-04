@@ -91,13 +91,17 @@ vif.drv_cb.psel    <= 1;
 vif.drv_cb.penable <= 1;
 
 // ACCESS cycle đầu tiên
+vif.drv_cb.psel    <= 1;
+vif.drv_cb.penable <= 1;
+
+// ACCESS cycle đầu tiên
 @(vif.drv_cb);
 
 // luôn bỏ qua sample đầu tiên
 do begin
     @(vif.drv_cb);
-while(vif.drv_cb.pready !== 1'b1);
 end
+while(vif.drv_cb.pready !== 1'b1);
         // Capture response (on the same clock pready was sampled)
         if (!tr.pwrite) begin
             tr.prdata = vif.drv_cb.prdata;
