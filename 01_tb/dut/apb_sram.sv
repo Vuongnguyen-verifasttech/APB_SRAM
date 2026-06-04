@@ -89,11 +89,8 @@ module apb_sram #(
                                 wait_cnt <= '0; // Đảm bảo reset counter tại đây
                                 state    <= ACCESS_WAIT;
                             end
-                        end else begin
-                            // Giữ pready chuẩn cho pha SETUP (0 nếu có wait, 1 nếu no-wait)
-                            pready <= (wait_cycles == 8'd0) ? 1'b1 : 1'b0;
-                        end
-                    end
+                        end 
+                    
                 end
 
                 // ------------------------------------------------------------
