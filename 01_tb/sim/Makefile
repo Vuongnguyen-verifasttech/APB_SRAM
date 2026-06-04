@@ -63,7 +63,10 @@ sim:
 		+UVM_TESTNAME=$(TEST_NAME) \
 		-do "run -all; coverage save -onexit $(TEST_NAME).ucdb; quit -f" \
 		| tee single_run_logs/$(TEST_NAME).log
-
+wave:
+	vsim $(TOP_MODULE) \
+		+UVM_TESTNAME=$(TEST_NAME) \
+		-do "add wave -r /*; run -all"
 # ------------------------------------------------------------------------------
 # TARGET REGRESSION CHUYÊN NGHIỆP: Vòng lặp lồng lặp (Quét Testlist x Quét Seeds)
 # ------------------------------------------------------------------------------
