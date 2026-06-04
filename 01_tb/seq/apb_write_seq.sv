@@ -33,7 +33,7 @@ class apb_write_seq extends apb_base_seq;
                 tr = apb_transaction::type_id::create("tr");
                 start_item(tr);
                // assert(tr.randomize() with {pwrite == 1;});
-               if (!tr.randomize() with {pwrite == 0;}) begin
+               if (!tr.randomize() with {pwrite == 1;}) begin
                 // pragma coverage off
                 `uvm_error(get_type_name(), "Randomize failed for WRITE transaction!");
                  // pragma coverage on
