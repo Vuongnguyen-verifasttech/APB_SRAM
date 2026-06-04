@@ -90,12 +90,13 @@ class apb_driver extends uvm_driver #(apb_transaction);
 vif.drv_cb.psel    <= 1;
 vif.drv_cb.penable <= 1;
 
-// vào ACCESS
+// ACCESS cycle đầu tiên
 @(vif.drv_cb);
 
-// polling pready
-while (vif.drv_cb.pready !== 1'b1) begin
+// luôn bỏ qua sample đầu tiên
+do begin
     @(vif.drv_cb);
+while(vif.drv_cb.pready !== 1'b1);
 end
         // Capture response (on the same clock pready was sampled)
         if (!tr.pwrite) begin

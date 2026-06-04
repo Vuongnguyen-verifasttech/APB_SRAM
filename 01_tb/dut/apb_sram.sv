@@ -84,7 +84,7 @@ always_ff @(posedge pclk or negedge presetn) begin
         //--------------------------------------------------
         IDLE:
         begin
-            pready  <= 1'b0;
+            pready  <= 1'b1;
             pslverr <= 1'b0;
 
             if(psel && !penable) begin
