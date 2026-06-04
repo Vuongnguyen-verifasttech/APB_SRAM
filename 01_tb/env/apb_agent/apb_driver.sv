@@ -83,16 +83,13 @@ class apb_driver extends uvm_driver #(apb_transaction);
         // Chờ đúng 1 clock để kết thúc Setup Phase và chuyển dịch sang Access Phase
         @(vif.drv_cb); 
 
-       // ACCESS PHASE
+// ACCESS PHASE
 vif.drv_cb.penable <= 1;
-
-// Phải clock qua 1 cycle ĐỂ penable thực sự đến DUT, rồi mới check pready
-@(vif.drv_cb);  // ← thêm dòng này TRƯỚC khi check
+@(vif.drv_cb);
 
 forever begin
-    if (vif.drv_cb.pready == 1'b1) begin
-        break;
-    end
+    vif.drv_cb.penable <= 1;   // ← giữ penable high mỗi cycle
+    if (vif.drv_cb.pready == 1'b1) break;
     @(vif.drv_cb);
 end
         // Thu thập dữ liệu phản hồi từ phía Slave nếu đây là lệnh READ
