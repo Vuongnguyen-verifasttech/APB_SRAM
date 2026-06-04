@@ -90,7 +90,7 @@ module apb_sram #(
                                 state    <= ACCESS_WAIT;
                             end
                         end 
-                    
+                    end
                 end
 
                 // ------------------------------------------------------------
