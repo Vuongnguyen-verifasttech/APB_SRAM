@@ -70,29 +70,27 @@ class apb_driver extends uvm_driver #(apb_transaction);
     // Task thực hiện giao thức APB 
     task drive_transaction(apb_transaction tr);
         // ====== 1. SETUP PHASE =============
-        // Kéo psel lên tích cực ngay lập tức và giữ penable = 0
+        // Assert psel for Setup and keep penable low for one clock
         vif.drv_cb.psel    <= 1;
         vif.drv_cb.penable <= 0;
-        vif.drv_cb.paddr   <= tr.paddr; // Cập nhật địa chỉ mới từ transaction
+        vif.drv_cb.paddr   <= tr.paddr;
         vif.drv_cb.pwrite  <= tr.pwrite;
-        
-        if (tr.pwrite) begin
-            vif.drv_cb.pwdata <= tr.pwdata; // Cập nhật dữ liệu ghi nếu là lệnh WRITE
-        end
-        
-        // Chờ đúng 1 clock để kết thúc Setup Phase và chuyển dịch sang Access Phase
-        @(vif.drv_cb); 
+        if (tr.pwrite) vif.drv_cb.pwdata <= tr.pwdata;
 
-// ACCESS PHASE
-vif.drv_cb.penable <= 1;
-@(vif.drv_cb);
+        // Wait one clock to complete SETUP
+        @(vif.drv_cb);
 
-forever begin
-    vif.drv_cb.penable <= 1;   // ← giữ penable high mỗi cycle
-    if (vif.drv_cb.pready == 1'b1) break;
-    @(vif.drv_cb);
-end
-        // Thu thập dữ liệu phản hồi từ phía Slave nếu đây là lệnh READ
+        // ====== 2. ACCESS PHASE ============
+        // Assert penable and hold psel until pready is sampled high
+        vif.drv_cb.penable <= 1;
+
+        // Wait until slave asserts pready at a clock edge
+        // Use a safe loop that samples only on the clocking block boundary
+        do begin
+            @(vif.drv_cb);
+        end while (vif.drv_cb.pready !== 1'b1);
+
+        // Capture response (on the same clock pready was sampled)
         if (!tr.pwrite) begin
             tr.prdata = vif.drv_cb.prdata;
         end
@@ -100,15 +98,12 @@ end
 
         // ======== 3. END TRANSACTION & TRANSITION =============
         if (!b2b_mode) begin
-            // Chế độ THƯỜNG: Hạ toàn bộ tín hiệu để trả bus về trạng thái nghỉ Idle
+            // Normal mode: deassert psel and penable and give one idle clock
             vif.drv_cb.psel    <= 0;
             vif.drv_cb.penable <= 0;
-            @(vif.drv_cb); // Cho phép bus nghỉ tối thiểu 1 chu kỳ Idle hoàn chỉnh
-        end 
-        else begin 
-            // Chế độ BACK-TO-BACK: Chỉ hạ penable để ngắt Transaction cũ.
-            // Tuyệt đối giữ psel = 1 và KHÔNG gọi lệnh chờ clock @(vif.drv_cb).
-            // Ngay chu kỳ sau, task được tái gọi sẽ đè dữ liệu mới lên bus tạo Setup Phase chuẩn.
+            @(vif.drv_cb);
+        end else begin
+            // Back-to-back: keep psel asserted, lower penable only; next transaction will start setup
             vif.drv_cb.penable <= 0;
         end
     endtask
