@@ -1,11 +1,5 @@
 `timescale 1ns/1ps
-//==============================================================================
-// File    : apb_sram.sv
-// Fix     : Dùng blocking assignment (=) cho wait_cycles trong always_ff
-//           để tránh hoàn toàn NBA read-after-write hazard.
-//           $urandom_range dùng trong always_ff với blocking = hợp lệ
-//           trong SystemVerilog (IEEE 1800-2012 §18.13.1).
-//==============================================================================
+
 module apb_sram #(
     parameter int ADDR_WIDTH = 32,
     parameter int DATA_WIDTH = 32,
@@ -38,19 +32,17 @@ module apb_sram #(
     logic [DATA_WIDTH-1:0] latched_wdata;
     logic                  latched_pwrite;
 
-    // Dùng blocking (=) cho 2 biến này để đọc lại ngay trong cùng always_ff
-    // mà không bị NBA hazard.
+    // Sửa thành logic thông thường, cập nhật qua Non-blocking (<=)
     logic [7:0] wait_cycles;
     logic [7:0] wait_cnt;
 
     apb_state_e state;
 
     always_ff @(posedge pclk or negedge presetn) begin
-
         if (!presetn) begin
             state          <= IDLE;
-            wait_cycles     = '0;   // blocking
-            wait_cnt        = '0;   // blocking
+            wait_cycles    <= '0;   // Sửa thành <=
+            wait_cnt       <= '0;   // Sửa thành <=
             pready         <= 1'b1;
             pslverr        <= 1'b0;
             prdata         <= '0;
@@ -60,33 +52,30 @@ module apb_sram #(
             foreach (mem[i]) mem[i] <= '0;
 
         end else begin
-
             case (state)
 
                 // ------------------------------------------------------------
-                // IDLE
+                // IDLE State
                 // ------------------------------------------------------------
                 IDLE: begin
-                    pready  <= 1'b1;
-                    pslverr <= 1'b0;
-                    wait_cnt = '0;          // blocking: reset counter
+                    pready   <= 1'b1;
+                    pslverr  <= 1'b0;
+                    wait_cnt <= '0; // Luôn giữ counter bằng 0 khi rảnh
 
                     if (psel && !penable) begin
                         latched_addr   <= paddr;
                         latched_wdata  <= pwdata;
                         latched_pwrite <= pwrite;
 
-                        // Blocking: wait_cycles có giá trị MỚI ngay lập tức
-                        // trong cùng cycle này, đọc được ở SETUP cycle sau.
-                        wait_cycles = $urandom_range(0, MAX_WAIT);
-
-                        state <= SETUP;
+                        // Giá trị ngẫu nhiên được gán qua Non-blocking, 
+                        // sẽ sẵn sàng ngay tại chu kỳ sau (SETUP)
+                        wait_cycles    <= $urandom_range(0, MAX_WAIT);
+                        state          <= SETUP;
                     end
                 end
 
                 // ------------------------------------------------------------
-                // SETUP  (psel=1, penable=0)
-                // wait_cycles đã có giá trị đúng từ blocking ở IDLE
+                // SETUP State (psel=1, penable=0)
                 // ------------------------------------------------------------
                 SETUP: begin
                     pslverr <= 1'b0;
@@ -94,58 +83,52 @@ module apb_sram #(
                     if (!psel) begin
                         pready <= 1'b1;
                         state  <= IDLE;
-
                     end else begin
-                        // Báo hiệu sớm cho master
+                        // Đặt pready dựa trên số chu kỳ wait_cycles đã chốt từ IDLE
                         pready <= (wait_cycles == 8'd0) ? 1'b1 : 1'b0;
 
                         if (penable) begin
                             if (wait_cycles == 8'd0) begin
-                                // No-wait: xong ngay
+                                // No-wait state: Thực hiện luôn và về IDLE
                                 pready <= 1'b1;
                                 do_mem_op();
                                 state  <= IDLE;
                             end else begin
-                                // Vào ACCESS_WAIT, counter = 0
-                                wait_cnt = '0;   // blocking: reset trước khi đếm
-                                state   <= ACCESS_WAIT;
+                                // Có Wait State: Chuyển sang ACCESS_WAIT.
+                                // Không reset wait_cnt ở đây nữa vì IDLE đã làm rồi.
+                                state  <= ACCESS_WAIT;
                             end
                         end
                     end
                 end
 
                 // ------------------------------------------------------------
-                // ACCESS_WAIT  (psel=1, penable=1, pready=0)
-                // Đếm wait_cnt từ 0 đến wait_cycles-1
+                // ACCESS_WAIT State (psel=1, penable=1, pready=0)
                 // ------------------------------------------------------------
                 ACCESS_WAIT: begin
-
                     if (!psel) begin
                         pready <= 1'b1;
                         state  <= IDLE;
-
                     end else if (!penable) begin
-                        // Illegal per spec – phòng thủ
+                        // Phòng thủ lỗi vi phạm giao thức từ Master
                         pready         <= 1'b1;
                         latched_addr   <= paddr;
                         latched_wdata  <= pwdata;
                         latched_pwrite <= pwrite;
-                        wait_cycles     = $urandom_range(0, MAX_WAIT);
-                        wait_cnt        = '0;
+                        wait_cycles    <= $urandom_range(0, MAX_WAIT);
+                        wait_cnt       <= '0;
                         state          <= SETUP;
-
                     end else begin
+                        // So sánh chuẩn counter dạng Non-blocking
                         if (wait_cnt < wait_cycles - 8'd1) begin
-                            // Chưa đủ wait cycle
                             pready   <= 1'b0;
-                            pslverr  <= 1'b0;
-                            wait_cnt  = wait_cnt + 8'd1;  // blocking: tăng ngay
+                            wait_cnt <= wait_cnt + 8'd1; // Tăng tuyến tính qua từng clock
                         end else begin
-                            // Đủ rồi
-                            pready  <= 1'b1;
-                            pslverr <= 1'b0;
+                            // Khi đếm đủ chu kỳ chờ
+                            pready   <= 1'b1;
                             do_mem_op();
-                            state   <= IDLE;
+                            wait_cnt <= '0; // Reset counter chuẩn bị cho lượt sau
+                            state    <= IDLE;
                         end
                     end
                 end
@@ -155,11 +138,11 @@ module apb_sram #(
                     pslverr <= 1'b0;
                     state   <= IDLE;
                 end
-
             endcase
         end
     end
 
+    // Task giữ nguyên logic gán tuần tự bên trong khối always_ff
     task automatic do_mem_op();
         if (latched_addr >= ADDR_WIDTH'(MEM_SIZE)) begin
             pslverr <= 1'b1;
