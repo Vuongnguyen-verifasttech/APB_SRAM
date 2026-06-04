@@ -67,7 +67,7 @@ class apb_monitor extends uvm_monitor;
         int wait_cnt;
 
         //-----------------------------------------------------
-        // 1. WAIT FOR SETUP PHASE
+        // 1. WAIT FOR SETUP PHASE (psel=1, penable=0)
         //-----------------------------------------------------
         do begin
             @(vif.mon_cb);
@@ -95,7 +95,7 @@ class apb_monitor extends uvm_monitor;
             UVM_HIGH)
 
         //-----------------------------------------------------
-        // 3. WAIT FOR ACCESS PHASE
+        // 3. WAIT FOR ACCESS PHASE (penable=1)
         //-----------------------------------------------------
         do begin
             @(vif.mon_cb);
@@ -103,10 +103,15 @@ class apb_monitor extends uvm_monitor;
         while(!vif.mon_cb.penable);
 
         //-----------------------------------------------------
-        // 4. COUNT WAIT STATES
+        // 4. COUNT WAIT STATES (wait until pready=1)
+        //     FIX: wait one clock cycle trước khi đếm
+        //     để đảm bảo pready được sample chính xác
         //-----------------------------------------------------
+        @(vif.mon_cb);  // <-- FIX: Wait one cycle after detect penable=1
+        
         wait_cnt = 0;
 
+        // Đếm số cycles khi pready vẫn còn 0
         while(vif.mon_cb.pready !== 1'b1) begin
             wait_cnt++;
             @(vif.mon_cb);
@@ -115,7 +120,7 @@ class apb_monitor extends uvm_monitor;
         trans.wait_cycles = wait_cnt;
 
         //-----------------------------------------------------
-        // 5. SAMPLE RESPONSE
+        // 5. SAMPLE RESPONSE (capture prdata & pslverr)
         //-----------------------------------------------------
         if(!trans.pwrite)
             trans.prdata = vif.mon_cb.prdata;
@@ -123,7 +128,7 @@ class apb_monitor extends uvm_monitor;
         trans.pslverr = vif.mon_cb.pslverr;
 
         //-----------------------------------------------------
-        // 6. REPORT
+        // 6. REPORT COLLECTED TRANSACTION
         //-----------------------------------------------------
         `uvm_info(get_type_name(),
             $sformatf(
