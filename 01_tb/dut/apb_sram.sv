@@ -1,42 +1,32 @@
 `timescale 1ns/1ps
 //==============================================================================
 // File        : apb_sram.sv
-// Description : APB Slave SRAM với wait state ngẫu nhiên
+// Description : APB Slave SRAM – wait state ngẫu nhiên
 //
-// Fixes so với bản trước:
-//   [F1] pready hạ xuống 0 ngay tại SETUP phase (khi psel=1, penable=0) nếu
-//        wait_cycles > 0 – đúng theo spec Case 2 (Wait-State Slave).
-//        Trước đó pready chỉ hạ ở ACCESS_WAIT nên waveform thấy pready=1
-//        suốt SETUP, driver tưởng no-wait và kết thúc sớm.
+// Root-cause (bản này fix dứt điểm):
+//   wait_cycles được gán NBA (<=) trong IDLE. Khi SETUP→ACCESS_WAIT xảy ra
+//   back-to-back (psel và penable cùng lên), wait_cycles đọc trong
+//   ACCESS_WAIT vẫn là giá trị CŨ (chưa propagate qua NBA).
+//   Kết quả: wait_cnt=0 < wait_cycles_old-1 = FALSE → done ngay 1 cycle.
 //
-//   [F2] Bộ đếm wait_cnt khởi tạo = 0 (không phải 1) và điều kiện done
-//        là wait_cnt == wait_cycles (không phải <). Trước đó khởi tạo
-//        wait_cnt=1 làm mất 1 wait cycle, ACCESS_WAIT chỉ sống 1 clk
-//        dù wait_cycles=8.
-//
-//   [F3] Không có dòng default "pready<=1" ở đầu always_ff để tránh
-//        NBA override che mất pready<=0 của wait state.
-//
-// Luồng chuẩn (Wait-State Case):
-//   IDLE  : pready=1, psel=0
-//   SETUP : psel=1, penable=0
-//           → latch addr/data/ctrl, random wait_cycles
-//           → nếu wait_cycles>0: pready<=0 ngay tại đây
-//           → nếu wait_cycles=0: giữ pready=1
-//   ACCESS_WAIT: psel=1, penable=1, pready=0
-//           → đếm wait_cnt từ 0 đến wait_cycles-1 (wait_cycles chu kỳ)
-//           → khi wait_cnt == wait_cycles-1: thực hiện mem op, pready<=1
-//           → chuyển về IDLE
+//   Fix dứt điểm:
+//   1. wait_cycles được capture vào WIRE COMBINATIONAL (wait_cycles_d)
+//      ngay khi IDLE detect transaction → không phụ thuộc NBA timing.
+//   2. wait_cycles_d được latch vào reg tại posedge IDLE, đọc trong SETUP
+//      và ACCESS_WAIT đều thấy giá trị đúng.
+//   3. Bộ đếm: wait_cnt chạy từ 0 đến wait_cycles-1 (inclusive).
+//      Done condition: wait_cnt == wait_cycles - 1.
+//      Nếu wait_cycles == 0: không vào ACCESS_WAIT, done ngay ở SETUP.
 //==============================================================================
 
 module apb_sram #(
     parameter int ADDR_WIDTH = 32,
     parameter int DATA_WIDTH = 32,
-    parameter int MEM_DEPTH  = 10,   // 2^10 = 1024 words
-    parameter int MAX_WAIT   = 8     // wait state tối đa mỗi transaction
+    parameter int MEM_DEPTH  = 10,
+    parameter int MAX_WAIT   = 8
 ) (
     input  logic                  pclk,
-    input  logic                  presetn,   // active-low reset
+    input  logic                  presetn,
 
     input  logic                  psel,
     input  logic                  penable,
@@ -49,9 +39,6 @@ module apb_sram #(
     output logic                  pslverr
 );
 
-    // =========================================================================
-    // Tham số nội bộ & khai báo tín hiệu
-    // =========================================================================
     localparam int MEM_SIZE = 1 << MEM_DEPTH;
 
     typedef enum logic [1:0] {
@@ -66,22 +53,31 @@ module apb_sram #(
     logic [DATA_WIDTH-1:0] latched_wdata;
     logic                  latched_pwrite;
 
-    logic [7:0] wait_cycles;   // số wait cycle random cho transaction hiện tại
-    logic [7:0] wait_cnt;      // bộ đếm: 0 .. wait_cycles-1
+    // wait_cycles: register, được latch 1 lần tại posedge IDLE
+    // wait_cnt:    bộ đếm tăng mỗi cycle trong ACCESS_WAIT
+    logic [7:0] wait_cycles;
+    logic [7:0] wait_cnt;
 
     apb_state_e state;
 
     // =========================================================================
-    // APB FSM
+    // Combinational: sinh wait_cycles MỚI mỗi lần IDLE chuẩn bị transaction.
+    // Đây là wire thuần túy – settle ngay trong cùng delta, không phụ thuộc
+    // NBA. Giá trị này được latch vào wait_cycles register tại posedge IDLE.
+    // =========================================================================
+    logic [7:0] wait_cycles_nxt;
+    assign wait_cycles_nxt = $urandom_range(0, MAX_WAIT);
+
+    // =========================================================================
+    // FSM
     // =========================================================================
     always_ff @(posedge pclk or negedge presetn) begin
 
-        // ── RESET ─────────────────────────────────────────────────────────────
         if (!presetn) begin
             state          <= IDLE;
             wait_cycles    <= '0;
             wait_cnt       <= '0;
-            pready         <= 1'b1;   // spec: slave sẵn sàng khi bus rảnh
+            pready         <= 1'b1;
             pslverr        <= 1'b0;
             prdata         <= '0;
             latched_addr   <= '0;
@@ -89,111 +85,108 @@ module apb_sram #(
             latched_pwrite <= 1'b0;
             foreach (mem[i]) mem[i] <= '0;
 
-        // ── HOẠT ĐỘNG BÌNH THƯỜNG ─────────────────────────────────────────────
-        // KHÔNG có default pready<=1 ở đây.
-        // Mỗi state / nhánh gán pready tường minh.
         end else begin
 
             case (state)
 
                 // ==============================================================
-                // IDLE: bus rảnh
-                //   pready = 1 (slave luôn sẵn sàng khi không có transaction)
-                //   Chờ master bắt đầu SETUP (psel=1, penable=0)
+                // IDLE: bus rảnh, pready=1
+                // Khi master bắt đầu (psel=1, penable=0):
+                //   - latch addr/data/ctrl
+                //   - latch wait_cycles_nxt vào register (đây là thời điểm
+                //     duy nhất wait_cycles được cập nhật)
+                //   - sang SETUP
                 // ==============================================================
                 IDLE: begin
-                    pready  <= 1'b1;
-                    pslverr <= 1'b0;
+                    pready   <= 1'b1;
+                    pslverr  <= 1'b0;
+                    wait_cnt <= '0;
 
                     if (psel && !penable) begin
-                        // Latch thông tin transaction
                         latched_addr   <= paddr;
                         latched_wdata  <= pwdata;
                         latched_pwrite <= pwrite;
-                        // Random wait cycles cho transaction này
-                        wait_cycles    <= $urandom_range(0, MAX_WAIT);
-                        wait_cnt       <= '0;
+                        wait_cycles    <= wait_cycles_nxt; // latch comb wire
                         state          <= SETUP;
-                        // pready sẽ được set đúng ở SETUP state cycle sau
                     end
                 end
 
                 // ==============================================================
-                // SETUP: psel=1, penable=0
-                //   [F1] Nếu wait_cycles > 0 → hạ pready=0 ngay tại đây.
-                //        Master sẽ thấy pready=0 khi nó assert penable,
-                //        biết slave chưa sẵn sàng và phải giữ penable chờ.
-                //   Nếu wait_cycles == 0 → giữ pready=1 (no-wait slave)
+                // SETUP: psel=1, penable=0 (đúng 1 cycle theo APB spec)
+                // wait_cycles đã được latch từ posedge IDLE → đọc giá trị đúng.
+                //
+                // Tại đây:
+                //   - Nếu wait_cycles == 0: giữ pready=1 (no-wait slave)
+                //   - Nếu wait_cycles >  0: kéo pready=0 (báo master phải đợi)
+                //
+                // Khi penable assert:
+                //   - wait=0: mem_op + IDLE
+                //   - wait>0: sang ACCESS_WAIT với wait_cnt=0
                 // ==============================================================
                 SETUP: begin
+                    pslverr <= 1'b0;
+
                     if (!psel) begin
-                        // Master hủy giao dịch → về IDLE
+                        // Master hủy
                         pready <= 1'b1;
                         state  <= IDLE;
 
                     end else begin
-                        // [F1] Báo hiệu cho master sớm nhất có thể:
-                        if (wait_cycles == 0) begin
-                            pready <= 1'b1;   // no-wait: giữ pready=1 xuyên suốt
-                        end else begin
-                            pready <= 1'b0;   // wait: kéo pready=0 để master chờ
-                        end
-                        pslverr <= 1'b0;
+                        // Báo hiệu sẵn sàng hay không cho master
+                        pready <= (wait_cycles == 8'd0) ? 1'b1 : 1'b0;
 
-                        if (psel && penable) begin
-                            // Master assert penable → vào ACCESS phase
-                            if (wait_cycles == 0) begin
-                                // No-wait: hoàn thành ngay cycle này
+                        if (penable) begin
+                            // Master vào ACCESS phase
+                            if (wait_cycles == 8'd0) begin
+                                // No-wait: xong ngay
                                 pready <= 1'b1;
                                 do_mem_op();
                                 state  <= IDLE;
                             end else begin
-                                // Wait: chuyển sang ACCESS_WAIT, đếm từ 0
-                                // [F2] wait_cnt đã được set = 0 ở IDLE,
-                                //      giữ nguyên, bắt đầu đếm ở ACCESS_WAIT
+                                // Wait-state: sang ACCESS_WAIT
+                                // pready đã được set = 0 ở trên
+                                // wait_cnt = 0 (đã clear ở IDLE, không thay đổi)
                                 state <= ACCESS_WAIT;
                             end
                         end
-                        // else: penable vẫn =0, ở lại SETUP, pready đã set ở trên
+                        // else: penable vẫn =0, ở lại SETUP
                     end
                 end
 
                 // ==============================================================
                 // ACCESS_WAIT: psel=1, penable=1, pready=0
-                //   Đếm wait_cnt từ 0 đến wait_cycles-1.
-                //   Tổng số cycle trong ACCESS_WAIT = wait_cycles cycle.
-                //   [F2] wait_cnt khởi từ 0, done khi wait_cnt == wait_cycles-1
-                //        (tức là đã chạy wait_cycles chu kỳ).
+                //
+                // wait_cnt đếm từ 0 đến wait_cycles-1.
+                // Mỗi posedge: nếu chưa đủ → tăng wait_cnt, giữ pready=0.
+                //              nếu đủ     → mem_op, pready=1, về IDLE.
+                //
+                // Số cycle ở lại ACCESS_WAIT = wait_cycles (vì wait_cycles >= 1).
                 // ==============================================================
                 ACCESS_WAIT: begin
 
                     if (!psel) begin
-                        // Abort: master hủy giữa chừng
                         pready <= 1'b1;
                         state  <= IDLE;
 
                     end else if (!penable) begin
-                        // penable hạ trong ACCESS (không hợp lệ theo APB spec)
-                        // Xử lý phòng thủ: coi như SETUP mới
-                        pready         <= 1'b0;   // wait_cycles đã random ≥ 1
+                        // Illegal per spec – defensive: re-latch như SETUP mới
                         latched_addr   <= paddr;
                         latched_wdata  <= pwdata;
                         latched_pwrite <= pwrite;
-                        wait_cycles    <= $urandom_range(0, MAX_WAIT);
+                        wait_cycles    <= wait_cycles_nxt;
                         wait_cnt       <= '0;
+                        pready         <= 1'b1;
                         state          <= SETUP;
 
                     end else begin
-                        // penable=1: slave đang được truy cập, đếm wait
-                        if (wait_cnt < wait_cycles - 1) begin
-                            // ── Chưa đủ wait cycle: tiếp tục chờ ──
+                        // Đang đếm wait
+                        if (wait_cnt < wait_cycles - 8'd1) begin
+                            // Chưa đủ
                             pready   <= 1'b0;
                             pslverr  <= 1'b0;
                             wait_cnt <= wait_cnt + 8'd1;
-
                         end else begin
-                            // ── Đủ wait_cycles chu kỳ: hoàn thành transaction ──
-                            // wait_cnt == wait_cycles-1 tại đây
+                            // Đủ rồi: wait_cnt == wait_cycles-1
                             pready  <= 1'b1;
                             pslverr <= 1'b0;
                             do_mem_op();
@@ -202,9 +195,6 @@ module apb_sram #(
                     end
                 end
 
-                // ==============================================================
-                // Default: recovery khỏi state không hợp lệ
-                // ==============================================================
                 default: begin
                     pready  <= 1'b1;
                     pslverr <= 1'b0;
@@ -216,7 +206,7 @@ module apb_sram #(
     end
 
     // =========================================================================
-    // do_mem_op: thực hiện READ hoặc WRITE vào memory
+    // Memory operation (task gọi được trong always_ff với SystemVerilog)
     // =========================================================================
     task automatic do_mem_op();
         if (latched_addr >= ADDR_WIDTH'(MEM_SIZE)) begin
