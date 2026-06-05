@@ -113,7 +113,7 @@ always_ff @(posedge pclk or negedge presetn) begin
 
             else if(penable) begin
 
-                if(wait_cnt == 0) begin
+                if(wait_cnt == 1) begin
 
                     pready <= 1'b1;
 
