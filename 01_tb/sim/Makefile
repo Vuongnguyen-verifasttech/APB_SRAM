@@ -27,7 +27,7 @@ TEST_LIST   ?= apb_write_test \
 NUM_SEEDS    ?= 1
 
 # Tên testcase mặc định khi chạy đơn lẻ (lệnh: make sim)
-TEST_NAME    ?= apb_stress_test
+TEST_NAME    ?= apb_wr_rd_test
 
 # Chuỗi target chạy tự động toàn bộ quy trình từ Clean -> Report
 all: clean init compile run_regression merge_coverage report
