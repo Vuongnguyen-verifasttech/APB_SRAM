@@ -132,34 +132,27 @@ always_ff @(posedge pclk or negedge presetn) begin
 
         //--------------------------------------------------
         ACCESS_WAIT:
-        begin
-
-            if(!psel || !penable) begin
-
-                pready <= 1'b1;
-                state  <= IDLE;
-            end
-
-            else begin
-
-                if(wait_cnt > 1) begin
-
-                    wait_cnt <= wait_cnt - 1;
-                    pready   <= 1'b0;
-                end
-                else begin
-
-                    pready <= 1'b1;
-
-                    do_mem_op();
-
-                    wait_cnt <= '0;
-
-                    state <= IDLE;
-                end
-            end
+begin
+    if(!psel || !penable) begin
+        pready <= 1'b1;
+        state  <= IDLE;
+    end
+    else begin
+        if(wait_cnt > 2) begin
+            wait_cnt <= wait_cnt - 1;
+            pready   <= 1'b0;
         end
-
+        else if (wait_cnt == 2) begin
+            wait_cnt <= wait_cnt - 1;
+            pready   <= 1'b1; // <-- Bật sớm 1 clock để chu kỳ sau (khi wait_cnt=1) pready trên bus sẽ bằng 1!
+        end
+        else begin // Khi wait_cnt == 1 (Chu kỳ ACCESS cuối cùng thực sự trên bus với PREADY=1)
+            do_mem_op();
+            wait_cnt <= '0;
+            state <= IDLE;
+        end
+    end
+end
         default:
             state <= IDLE;
 
