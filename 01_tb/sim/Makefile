@@ -108,7 +108,7 @@ merge_coverage:
 # Xuất báo cáo chi tiết (HTML Report + Summary Text)
 report:
 	@echo "=== Generating HTML Coverage Report ==="
-	vcover report -html -htmldir $(COV_REPORT) -verbose $(COV_MERGE_DIR)/merged.ucdb
+	vcover report -html -htmldir $(COV_REPORT) -verbose $(COV_MERGE_DIR)/merged.ucdb -details
 	@echo "=== Generating Summary Text Report ==="
 	vcover report -details $(COV_MERGE_DIR)/merged.ucdb > summary.txt
 	@echo "Report generation finished. Check directory: $(COV_REPORT)/"
